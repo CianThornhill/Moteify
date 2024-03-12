@@ -40,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--white);
 }
 
+h1{
+    font-size: 3rem;
+}
+
 main {
     flex: 1;
     background-color: var(--background_light);
@@ -48,6 +52,7 @@ main {
 .active {
     border-bottom: 2px solid var(--off-white);
 }
+
 /* --- HEADER --- */
 .nav-container {
     display:flex;
