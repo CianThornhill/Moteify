@@ -96,3 +96,14 @@ a.nav-link {
     max-width: 200px;
     height: auto;
 }
+
+.search-btn {
+    color: white;
+    border-color: white;
+}
+
+.search-btn:hover {
+    color: var(--mint_03);
+    background-color: transparent; 
+    border-color: var(--mint_03);
+}
