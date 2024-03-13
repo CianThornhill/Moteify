@@ -13,6 +13,6 @@ acceptance criteria
 
 
 tasks
--[ ]
--[ ]
--[ ]
+- [ ]
+- [ ]
+- [ ]
