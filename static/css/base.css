@@ -24,18 +24,16 @@
 
 /* --- MAIN STYLING --- */
 
-html, body {
-    height: 100%;
-}
-
 body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
     color: var(--off-white);
+    min-height: 100vh;
+    background-color: var(--background_light);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .footer_h {
     font-family: var(--title-font);
     color: var(--white);
 }
@@ -45,8 +43,7 @@ h1{
 }
 
 main {
-    flex: 1;
-    background-color: var(--background_light);
+    display: flex;
 }
 
 .active {
@@ -107,3 +104,14 @@ a.nav-link {
     background-color: transparent; 
     border-color: var(--mint_03);
 }
+
+/* --- Footer --- */
+footer {
+    background-color: var(--background);
+    margin-top:auto;
+    
+}
+
+.social-icon {
+    color: var(--off-white);
+} 
