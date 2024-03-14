@@ -30,9 +30,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', 'https://*.herokuapp.com']
+
+
+# ALLOWED_HOSTS = ['8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
 
 
 # Application definition
@@ -45,11 +49,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
     'cloudinary_storage',
     'cloudinary',
+
     'accounts',
     'home',
 ]
@@ -86,6 +93,16 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+
 ]
 
 WSGI_APPLICATION = 'moteify.wsgi.application'
