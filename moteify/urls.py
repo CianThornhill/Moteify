@@ -23,4 +23,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('profiles/', include('profiles.urls')),
     path('djrichtextfield/', include('djrichtextfield.urls')),
+    path('emotes/', include('emotes.urls')),
 ]
