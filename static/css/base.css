@@ -13,6 +13,7 @@
     --teal_02: #5B8FB9;
     --mint_03: #B6EADA;
     --off-white: #f6f6f6;
+    --white-faded:#d8d8d8;
     --white: #fff;
     --black: #000;
 
@@ -48,6 +49,7 @@ main {
 
 .active {
     border-bottom: 2px solid var(--off-white);
+    font-weight: 500;
 }
 
 /* --- HEADER --- */
@@ -72,12 +74,13 @@ main {
 
 /* add spacing and line to navbar items */
 a.navbar-brand {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 .navbar-nav .nav-item {
     border-right: 1px solid var(--off-white);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: center;
 }
 
 /* Remove border from the last navbar link */
@@ -103,6 +106,22 @@ a.nav-link {
     color: var(--mint_03);
     background-color: transparent; 
     border-color: var(--mint_03);
+}
+
+/* --- Form --- */
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+    background-color: var(--background);
+    color: var(--off-white);
+}
+
+/*Targeting crispy form form-text class*/
+.form-text {
+    color: var(--white-faded);
 }
 
 /* --- Footer --- */

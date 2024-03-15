@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Profile - {{Profile.user.username|default:'User' }}{% endblock %}
+
+{% block content %}
+
+    <div class="profile-container">
+        
+        <div class="profile-info text-center">
+            <div class="profile_pic_container">
+                {% if user_profile.profile_image %}
+                <img src= "{{ user_profile.profile_image.url }}" alt="Profile Picture">
+                {% else %}
+                <img src="{% static 'img/user_default.png' %}" alt="Default Picture">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class ="profile-username text-center">
+        <h1 class="section-title">{{ user_profile.user.username }}</h1>
+        </div>
+
+        <div class="profile-bio text-center">
+            <h2>Bio:</h2>
+            {% if user_profile.bio %}
+            {{ user_profile.bio|safe }}
+            {% else %}
+            <p>Click "Edit Profile" to add your bio.</p>
+            {% endif %}
+        </div>
+
+        <br><br><br><br><br>
+        <p><i> [This form will be in a modal or another page on release but for now edit here] </i></p>
+
+        <!-- This will all be within a Modal or another page to update your user profile with this form.-->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+        <!------------------------------------------------------------------------------------------------>
+
+    </div>
+{% endblock %}
