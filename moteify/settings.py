@@ -14,10 +14,6 @@ from pathlib import Path
 
 import os
 import dj_database_url
-import cloudinary
-import cloudinary_storage
-
-# Configure Cloudinary
 
 if os.path.isfile("env.py"):
     import env

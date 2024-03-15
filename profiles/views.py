@@ -10,7 +10,14 @@ def profile_view(request):
     #Fetch or create UserProfile
     user_profile, created = Profile.objects.get_or_create(user=request.user)
     
+    #Debugging Print Statements
+    print("Profile created:", created)
+    
     if request.method == 'POST':
+        #Debugging Print Statements
+        print("Form data:", request.POST)
+        print("Files:", request.FILES)
+
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()

@@ -22,6 +22,16 @@
         <h1 class="section-title">{{ user_profile.user.username }}</h1>
         </div>
 
+        <!--Testing issues-->
+        <p><i> [This is for Debugging] </i></p>
+
+        <p>Default Static Image:</p><img src="{% static 'img/user_default.png' %}" alt="Default Picture">
+        <p>Default image url {% static 'img/user_default.png' %}</p>
+        <p>UserProfile URL:{{ user_profile.profile_image.url }}</p>
+
+        <p><i> [End of Debugging] </i></p>
+        <!------------------>
+
         <div class="profile-bio text-center">
             <h2>Bio:</h2>
             {% if user_profile.bio %}
