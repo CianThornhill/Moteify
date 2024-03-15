@@ -43,6 +43,7 @@ CSRF_TRUSTED_ORIGINS = ['https://8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110
 # Application definition
 
 INSTALLED_APPS = [
+    #Django 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,21 +56,38 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'cloudinary_storage',
-    'cloudinary',
-
+    # Apps
     'accounts',
     'home',
     'emotes',
     'profiles',
 
+    # Cloudinary Storage
+
+    'cloudinary_storage',
+    'cloudinary',
+
+    # Other
     'crispy_forms',
     'crispy_bootstrap5',
+    'djrichtextfield',
 
 ]
 
 SITE_ID = 1
 LOGOUT_REDIRECT_URL = '/'
+
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
+    'init_template': 'djrichtextfield/init/ckeditor.js',
+    'settings': {
+        'toolbar': [
+            ['Format', 'Bold', 'Italic', 'Underline'],
+            ['NumberedList','BulletedList'], ['Undo', 'Redo'],
+        ],
+        'format_tags': 'p;h1;h2;h3'   
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

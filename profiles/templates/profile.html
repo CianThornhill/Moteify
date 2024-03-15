@@ -33,7 +33,7 @@
 
         <p><i> [End of Debugging] </i></p> -->
         <!----------------------------------------------->
-        
+
 
         <!-- Profile Display Name-->
         <div class ="profile-info text-center">
@@ -60,11 +60,14 @@
         <br><br><br><br><br>
         <p><i> [This form will be in a modal or another page through "Edit Profile" on release but for now edit here] </i></p>
 
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Save</button>
-        </form>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data" class="p-2 form">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary mt-2">Save</button>
+            </form>
+        </div>
         <!------------------------------------------------------------------------------------------------>
 
     </div>
