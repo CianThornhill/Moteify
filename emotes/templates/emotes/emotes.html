@@ -6,10 +6,10 @@
 <div class="container d-flex flex-row flex-wrap justify-content-center">
 
     {% for emote in emotes %}
-    <a href="" class="emotes" aria-label="Click to view {{emote.title}}">
+    <a href="{% url 'emote_detail' emote.id %}" class="emotes" aria-label="Click to view {{emote.title}}">
         <div class="card bg-dark m-2" style="max-width: 256px">
             <div class="emote-container">
-                <img class="card-img-top emote-image" src="{{emote.emote_img.url}}" alt="Emote Image">
+                <img class="card-img-top emote-list-img" src="{{emote.emote_img.url}}" alt="Emote Image">
                 <div class="card-body">
                     <h2 class="card-title">{{emote.title}}</h2>
                     <p class="card-text">Creator: {{emote.user}}<p>

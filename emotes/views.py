@@ -19,6 +19,13 @@ class Emotes(ListView):
     model = Emote
     context_object_name = 'emotes'
 
+class EmoteDetail(DetailView):
+    """
+    View Individual Emote
+    """
+    template_name = 'emotes/emote_detail.html'
+    model = Emote
+    context_object_name = 'emote'
 
 class AddEmote(LoginRequiredMixin, CreateView):
     """

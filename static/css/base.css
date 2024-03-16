@@ -124,7 +124,7 @@ a.nav-link {
     color: var(--white-faded);
 }
 
-/* --- EMOTES --- */
+/* --- EMOTES LIST --- */
 
 .card {
     margin-top:1rem;
@@ -151,11 +151,21 @@ a.nav-link {
     overflow: hidden; /* Hide overflow if the image exceeds container size */
 }
 
-.emote-image {
+.emote-list-img {
     display: block; /* Ensure image is treated as a block element */
     width: 100%; /* Take full width of parent container */
     height: auto; /* Allow height to adjust according to aspect ratio */
 }
+
+/* --- EMOTE Detail --- */
+.emote-img {
+    display: flex;
+    justify-content: center;
+    border: solid 2px black;
+    padding: 1rem;
+    background-color: var(--background);
+}
+
 
 /* --- Footer --- */
 footer {
