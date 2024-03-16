@@ -124,6 +124,49 @@ a.nav-link {
     color: var(--white-faded);
 }
 
+/* --- EMOTES LIST --- */
+
+.card {
+    margin-top:1rem;
+    color: var(--off-white);
+}
+
+.emotes {
+    text-decoration: none;
+    color: var(--off-white)
+}
+
+.emotes_category{
+    border: solid 1px white;
+}
+
+.emotes:hover {
+    cursor: pointer;
+}
+
+.emote-container {
+    width: 100%; /* Ensure image takes full width of container */
+    max-width: 256px; /* Set maximum width */
+    height: auto; /* Allow the height to adjust according to aspect ratio */
+    overflow: hidden; /* Hide overflow if the image exceeds container size */
+}
+
+.emote-list-img {
+    display: block; /* Ensure image is treated as a block element */
+    width: 100%; /* Take full width of parent container */
+    height: auto; /* Allow height to adjust according to aspect ratio */
+}
+
+/* --- EMOTE Detail --- */
+.emote-img {
+    display: flex;
+    justify-content: center;
+    border: solid 2px black;
+    padding: 1rem;
+    background-color: var(--background);
+}
+
+
 /* --- Footer --- */
 footer {
     background-color: var(--background);
@@ -134,3 +177,85 @@ footer {
 .social-icon {
     color: var(--off-white);
 } 
+
+/* --- Categories --- */
+.happy {
+    color: #FFD700; 
+    border: 1px solid #FFD700; 
+}
+
+.sad {
+    color: #4169E1; /* Royal Blue */
+    border: 1px solid #4169E1; /* Royal Blue */
+}
+
+.excited {
+    color: #FF6347; /* Tomato */
+    border: 1px solid #FF6347; /* Tomato */
+}
+
+.love {
+    color: #FF69B4; /* Hot Pink */
+    border: 1px solid #FF69B4; /* Hot Pink */
+}
+
+.angry {
+    color: #FF4500; /* Orange Red */
+    border: 1px solid #FF4500; /* Orange Red */
+}
+
+.laughing {
+    color: #00FF7F; /* Spring Green */
+    border: 1px solid #00FF7F; /* Spring Green */
+}
+
+.cry {
+    color: #4682B4; /* Steel Blue */
+    border: 1px solid #4682B4; /* Steel Blue */
+}
+
+.surprised {
+    color: #9400D3; /* Dark Violet */
+    border: 1px solid #9400D3; /* Dark Violet */
+}
+
+.confused {
+    color: #8A2BE2; /* Blue Violet */
+    border: 1px solid #8A2BE2; /* Blue Violet */
+}
+
+.thumbs-up-down {
+    color: #32CD32; /* Lime Green */
+    border: 1px solid #32CD32; /* Lime Green */
+}
+
+.celebration {
+    color: #FFA500; /* Orange */
+    border: 1px solid #FFA500; /* Orange */
+}
+
+.dance {
+    color: #FF1493; /* Deep Pink */
+    border: 1px solid #FF1493; /* Deep Pink */
+}
+
+.cool {
+    color: #00FFFF; /* Cyan */
+    border: 1px solid #00FFFF; /* Cyan */
+}
+
+.cute {
+    color: #FFC0CB; /* Pink */
+    border: 1px solid #FFC0CB; /* Pink */
+}
+
+.funny {
+    color: #FFD700; /* Gold */
+    border: 1px solid #FFD700; /* Gold */
+}
+
+.other {
+    color: #808080; /* Gray */
+    border: 1px solid #808080; /* Gray */
+}
+/* ------------------ */
