@@ -16,7 +16,7 @@
               <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home:home' %}">Home</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="#">Emotes</a>
+              <a class="nav-link" href="{% url 'emotes' %}">Emotes</a>
               </li>
 
               {% if request.user.is_authenticated %}

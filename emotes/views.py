@@ -11,6 +11,15 @@ from .forms import EmoteForm
 
 # Create your views here.
 
+class Emotes(ListView):
+    """
+    View All Emotes
+    """
+    template_name = 'emotes/emotes.html'
+    model = Emote
+    context_object_name = 'emotes'
+
+
 class AddEmote(LoginRequiredMixin, CreateView):
     """
     Add Emote View
