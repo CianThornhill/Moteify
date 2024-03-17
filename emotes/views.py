@@ -4,6 +4,10 @@ from django.views.generic import (
     UpdateView
 )
 
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin
+)
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Emote
@@ -39,4 +43,15 @@ class AddEmote(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddEmote, self).form_valid(form)
+
+class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    Delete an emote
+    """
+    model = Emote
+    template_name = 'emotes/emote_delete.html'
+    success_url = '/emotes/emotes'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
 

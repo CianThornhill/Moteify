@@ -166,6 +166,15 @@ a.nav-link {
     background-color: var(--background);
 }
 
+.emote-pic {
+    width: 75%;
+    max-width: 512px;
+}
+
+.emote-details{
+    width:100%;
+}
+
 
 /* --- Footer --- */
 footer {
