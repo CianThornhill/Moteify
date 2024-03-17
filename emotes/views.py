@@ -44,13 +44,28 @@ class AddEmote(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super(AddEmote, self).form_valid(form)
 
+
+class EditEmote(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    Edit an emote
+    """
+    model = Emote
+    template_name = 'emotes/emote_edit.html'
+    form_class = EmoteForm
+    success_url = '/emotes/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+
+
 class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     Delete an emote
     """
     model = Emote
     template_name = 'emotes/emote_delete.html'
-    success_url = '/emotes/emotes'
+    success_url = '/emotes/'
 
     def test_func(self):
         return self.request.user == self.get_object().user

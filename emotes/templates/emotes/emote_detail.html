@@ -19,11 +19,15 @@
             <button class="btn btn-dark"> Favourite </button>
             <button class="btn btn-dark"> Download </button>
             </div>
+            {% else %}
+            <div class="text-center">
+                <p class="text-danger">You must be logged in to download or favourite</p>
+            </div>
             {% endif %}
 
             {% if request.user == emote.user %}
             <div class="text-center">
-                <a href="" class="btn btn-primary 25">Edit</a>
+                <a href="{% url 'edit_emote' emote.id %}" class="btn btn-primary 25">Edit</a>
                 <a href="{% url 'delete_emote' emote.id %}" class="btn btn-primary 25">Delete</a>
             </div>
             {% endif %}

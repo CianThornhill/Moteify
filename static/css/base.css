@@ -131,6 +131,18 @@ a.nav-link {
     color: var(--off-white);
 }
 
+.card-title{
+    text-align: center;
+    font-weight: 800;
+
+}
+
+.card-text{
+    font-weight:200;
+    text-align: center;
+    border: solid 1px var(--white-faded);
+}
+
 .emotes {
     text-decoration: none;
     color: var(--off-white)
@@ -224,8 +236,8 @@ footer {
 }
 
 .surprised {
-    color: #9400D3; /* Dark Violet */
-    border: 1px solid #9400D3; /* Dark Violet */
+    color: #a71de2; /* Dark Violet */
+    border: 1px solid #a71de2; /* Dark Violet */
 }
 
 .confused {

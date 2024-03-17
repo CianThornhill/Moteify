@@ -11,7 +11,7 @@
             <div class="emote-container">
                 <img class="card-img-top emote-list-img" src="{{emote.emote_img.url}}" alt="Emote Image">
                 <div class="card-body">
-                    <h2 class="card-title">{{emote.title}}</h2>
+                    <p class="card-title">{{emote.title}}</p>
                     <p class="card-text">Creator: {{emote.user}}<p>
                     <p class="card-text emotes_category text-center {{ emote.category|lower|slugify }}">{{emote.category}}</p>
                 </div>
