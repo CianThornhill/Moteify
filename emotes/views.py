@@ -7,11 +7,18 @@ from django.views.generic import (
 from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
-
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 
 from .models import Emote
 from .forms import EmoteForm
+
+from django.contrib import messages
+from .utils import is_favourite
 
 # Create your views here.
 
@@ -70,3 +77,27 @@ class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         return self.request.user == self.get_object().user
 
+
+@login_required
+def Favourite_add(request, id):
+    emote = get_object_or_404(Emote, id=id)
+    if emote.favourites.filter(id=request.user.id).exists():
+        emote.favourites.remove(request.user)
+        messages.success(
+            request, 'Emote removed from favorites!')
+    else:
+        emote.favourites.add(request.user)
+        messages.success(
+            request, 'Emote added to favorites')
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+
+@login_required
+def Favourite_list(request):
+    user_favourite_emotes = user_favourite_emotes = request.user.favourite.all()
+
+    print("UserFavouriteEmotes:", user_favourite_emotes)
+    return render(
+        request, 'emotes/favourite_emotes.html',
+        {'user_favourite_emotes': user_favourite_emotes})
+    

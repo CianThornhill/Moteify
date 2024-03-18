@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Emotes{% endblock %}
+
+{% block content %}
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+
+    <h2> My Favourites </h2>
+    {% if user_favourite_emotes %}
+    {% for emote in user_favourite_emotes %}
+    <a href="{% url 'emote_detail' emote.id %}" class="emotes" aria-label="Click to view {{emote.title}}">
+        <div class="card bg-dark m-2" style="max-width: 256px">
+            <div class="emote-container">
+                <img class="card-img-top emote-list-img" src="{{emote.emote_img.url}}" alt="Emote Image">
+                <div class="card-body">
+                    <p class="card-title">{{emote.title}}</p>
+                    <p class="card-text">Creator: {{emote.user}}<p>
+                    <p class="card-text emotes_category text-center {{ emote.category|lower|slugify }}">{{emote.category}}</p>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    {% else %}
+    <h3>You don't have any favourite Emotes</h3>
+    {% endif %}
+</div>
+{% endblock %}
