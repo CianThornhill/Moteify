@@ -100,4 +100,7 @@ def Favourite_list(request):
     return render(
         request, 'emotes/favourite_emotes.html',
         {'user_favourite_emotes': user_favourite_emotes})
+
+
+# Repurpose above code for "My Emotes" page
     
