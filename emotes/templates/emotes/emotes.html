@@ -5,6 +5,18 @@
 {% block content %}
 <div class="container d-flex flex-row flex-wrap justify-content-center">
 
+    <!-- Filter Form using Emote categories context defined in view-->
+    <form method="GET" action="{% url 'emotes' %}">
+        <select name="category">
+            <option value="">All Categories</option>
+            {% for category, _ in emote_categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    
+    <!-- Iterate through Emotes -->
     {% for emote in emotes %}
     <a href="{% url 'emote_detail' emote.id %}" class="emotes" aria-label="Click to view {{emote.title}}">
         <div class="card bg-dark m-2" style="max-width: 256px">

@@ -14,7 +14,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
-from .models import Emote
+from .models import Emote, EMOTE_CATEGORY
 from .forms import EmoteForm
 
 from django.contrib import messages
@@ -29,6 +29,19 @@ class Emotes(ListView):
     template_name = 'emotes/emotes.html'
     model = Emote
     context_object_name = 'emotes'
+    extra_context = {'emote_categories': EMOTE_CATEGORY} # Pass EMOTE_CATEGORY to templating
+
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Get selected category from request
+        category = self.request.GET.get('category')
+        # Filter queryset based on selected category
+        if category:
+            queryset = queryset.filter(category=category)
+        return queryset
+
+    
 
 class EmoteDetail(DetailView):
     """
