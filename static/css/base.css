@@ -112,7 +112,7 @@ a.nav-link {
 
 .form {
     width: 100%;
-    margin: 3% auto;
+    margin: 25px auto;
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
     background-color: var(--background);
@@ -124,6 +124,67 @@ a.nav-link {
     color: var(--white-faded);
 }
 
+/* --- PROFILE --- */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; 
+    margin: 25px auto; 
+}
+
+.profile-bio {
+    background-color: var(--background);
+    width: 100%;
+    border: 3px solid black;
+    margin: 25px;
+    padding: 10px;
+
+}
+
+.profile-info{
+    border: 3px solid var(--background);
+    width:100%;
+}
+
+.profile-username {
+    background-color: var(--background);
+    margin-top: 10px;
+    width:100%;
+}
+
+.profile-username h2 {
+    color: var(--mint_03);
+}
+
+.profile_pic_container {
+    background-color: var(--background);
+    border-radius: 50%;
+   
+}
+.profile_pic_container img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
+.round-image {
+    border-radius: 50%;
+    border: 3px solid black;
+
+}
+
+.profile-edit-container{
+    text-align:center;
+    margin-top: 25px;
+
+}
+
+.profile-buttons{
+    display:flex;
+    flex-direction: row;
+}
+.profile-buttons a {
+    margin: 10px;
+}
 /* --- EMOTES LIST --- */
 
 .card {
@@ -163,6 +224,22 @@ a.nav-link {
     overflow: hidden; /* Hide overflow if the image exceeds container size */
 }
 
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.emotes-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 .emote-list-img {
     display: block; /* Ensure image is treated as a block element */
     width: 100%; /* Take full width of parent container */
@@ -187,6 +264,30 @@ a.nav-link {
     width:100%;
 }
 
+/*--- Pagination ---*/
+
+.pagination {
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.pagination a {
+    color: var(--mint_03); /* Change this to your desired color */
+    text-decoration: none;
+    margin: 0 5px; /* Adjust this value to add space between pagination links */
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+.current {
+    font-weight: bold;
+    margin: 0 5px; /* Adjust this value to add space between current page indicator and pagination links */
+}
 
 /* --- Footer --- */
 footer {

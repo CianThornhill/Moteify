@@ -20,6 +20,7 @@ from .forms import EmoteForm
 from django.contrib import messages
 from .utils import is_favourite
 
+from django.core.paginator import Paginator
 # Create your views here.
 
 class Emotes(ListView):
@@ -30,6 +31,7 @@ class Emotes(ListView):
     model = Emote
     context_object_name = 'emotes'
     extra_context = {'emote_categories': EMOTE_CATEGORY} # Pass EMOTE_CATEGORY to templating
+    paginate_by = 8
 
 
     def get_queryset(self):

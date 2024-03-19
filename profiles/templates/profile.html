@@ -9,19 +9,19 @@
     <div class="profile-container">
         
         <!-- Profile Picture -->
-        <div class="profile-info text-center">
+        <div class="text-center">
             <div class="profile_pic_container">
                 {% if user_profile.profile_image %}
-                <img src= "{{ user_profile.profile_image.url }}" alt="Profile Picture">
+                <img src= "{{ user_profile.profile_image.url }}" alt="Profile Picture" class="round-image">
                 {% else %}
-                <img src="{{ user_profile.default_image.url }}" alt="Default Picture">
+                <img src="{{ user_profile.default_image.url }}" alt="Default Picture" class="round-image">
                 {% endif %}
             </div>
         </div>
 
         <!-- Profile Username Display -->
         <div class ="profile-username text-center">
-        <h1 class="section-title">{{ user_profile.user.username }}</h1>
+        <h2 class="section-title">{{ user_profile.user.username }}</h2>
         </div>
 
         <!--DEBUGING DEFAULT USER PROFILE PICTURE ISSUE-->
@@ -37,11 +37,11 @@
 
         <!-- Profile Display Name-->
         <div class ="profile-info text-center">
-            <h2>Display name:</h2>
+            <p>Display name:</p>
             {% if user_profile.display_name %}
             {{ user_profile.display_name|safe }}
             {% else %}
-            <p> | Click "Edit Profile" to add your Display name</p>
+            <p>"Edit Profile" below to add your Display name</p>
             {% endif %}
         </div>
 
@@ -51,16 +51,20 @@
             {% if user_profile.bio %}
             {{ user_profile.bio|safe }}
             {% else %}
-            <p>Click "Edit Profile" to add your bio.</p>
+            <p>"Edit Profile" below to add your bio.</p>
             {% endif %}
         </div>
 
 
-        <!-- This form will  be within a Modal or another page to update your user profile on "Edit Profile Button"-->
-        <br><br><br><br><br>
-        <p><i> [This form will be in a modal or another page through "Edit Profile" on release but for now edit here] </i></p>
+        <div class="div profile-buttons">
+        <a href="{% url 'favourite_list' %}" class="btn btn-primary"> <h2>My Favourites</h2></a>
+        <a href="#" class="btn btn-primary"> <h2>My Emotes</h2></a>
+        </div>
 
-        <div class="container">
+
+        <!-- This form will  be within a Modal or another page to update your user profile on "Edit Profile Button"-->
+        <div class="container profile-edit-container">
+        <h2> Edit Profile </h2>
             <form method="post" enctype="multipart/form-data" class="p-2 form">
                 {% csrf_token %}
                 {{ form.media }}
@@ -69,9 +73,6 @@
             </form>
         </div>
         <!------------------------------------------------------------------------------------------------>
-
-        <a href="{% url 'favourite_list' %}" class="btn btn-primary"> <h2>My Favourites</h2></a>
-        <a href="#" class="btn btn-primary"> <h2>My Emotes</h2></a>
 
     </div>
 {% endblock %}

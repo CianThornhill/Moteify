@@ -3,33 +3,62 @@
 {% block title %}Emotes{% endblock %}
 
 {% block content %}
-<div class="container d-flex flex-row flex-wrap justify-content-center">
+<div class="list-container">
 
     <!-- Filter Form using Emote categories context defined in view-->
-    <form method="GET" action="{% url 'emotes' %}">
+    <form method="GET" action="{% url 'emotes' %}" class="p-2 form text-center">
         <select name="category">
             <option value="">All Categories</option>
             {% for category, _ in emote_categories %}
                 <option value="{{ category }}">{{ category }}</option>
             {% endfor %}
         </select>
+        {{ form|crispy }}
         <button type="submit">Filter</button>
     </form>
     
-    <!-- Iterate through Emotes -->
-    {% for emote in emotes %}
-    <a href="{% url 'emote_detail' emote.id %}" class="emotes" aria-label="Click to view {{emote.title}}">
-        <div class="card bg-dark m-2" style="max-width: 256px">
-            <div class="emote-container">
-                <img class="card-img-top emote-list-img" src="{{emote.emote_img.url}}" alt="Emote Image">
-                <div class="card-body">
-                    <p class="card-title">{{emote.title}}</p>
-                    <p class="card-text">Creator: {{emote.user}}<p>
-                    <p class="card-text emotes_category text-center {{ emote.category|lower|slugify }}">{{emote.category}}</p>
+    <!-- Parent container for emotes and pagination -->
+    <div class="content-container">
+
+        <!-- Emotes Container -->
+        <div class="emotes-container">
+            {% for emote in page_obj %}
+            <a href="{% url 'emote_detail' emote.id %}" class="emotes" aria-label="Click to view {{emote.title}}">
+                <div class="card bg-dark m-2" style="max-width: 256px">
+                    <div class="emote-container">
+                        <img class="card-img-top emote-list-img" src="{{emote.emote_img.url}}" alt="Emote Image">
+                        <div class="card-body">
+                            <p class="card-title">{{emote.title}}</p>
+                            <p class="card-text">Creator: {{emote.user}}<p>
+                            <p class="card-text emotes_category text-center {{ emote.category|lower|slugify }}">{{emote.category}}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
+            {% endfor %}
         </div>
-    </a>
-    {% endfor %}
+
+        <!-- Pagination links -->
+        <div class="pagination">
+            <span class="step-links">
+                {% with request.GET.category as current_category %}
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1{% if current_category %}&category={{ current_category }}{% endif %}">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}{% if current_category %}&category={{ current_category }}{% endif %}">last &raquo;</a>
+                    {% endif %}
+                {% endwith %}
+            </span>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
