@@ -3,37 +3,41 @@
 {% block title %}{{emote.title}}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="emote-info mt-3 p-1">
-            <div class="emote-img">
-                <img src="{{ emote.emote_img.url }}" alt="{{ emote.title }}" class="emote-pic">
-            </div>
-            <div class="emote-details">
-                <h3 class ="text-center">{{emote.title}}</h3>
-                <p class="text-center upload-on">Uploaded on {{emote.upload_date}} </p>
-            </div>
-            <hr>
+<div class="container">
+    <div class="emote-info mt-3 p-1">
+        <div class="emote-img">
+            <img src="{{ emote.emote_img.url }}" alt="{{ emote.title }}" class="emote-pic">
+        </div>
+        <div class="emote-details">
+            <h3 class="text-center">{{emote.title}}</h3>
+            <p class="text-center upload-on">Uploaded on {{emote.upload_date}} </p>
+        </div>
+        <hr>
 
-            {% if request.user.is_authenticated %}
-            <div class="text-center">
+        {% if request.user.is_authenticated %}
+        <div class="text-center">
 
-            <a href="{% url 'favourite_add' emote.id %}" class="btn btn-dark"> Favourite </a>
-            
+            {% if is_favourite %}
+            <a href="{% url 'favourite_add' emote.id %}" class="btn btn-dark"> Remove Favourite </a>
+            {% else %}
+            <a href="{% url 'favourite_add' emote.id %}" class="btn btn-dark"> Add Favourite </a>
+            {% endif %}
+
             <a href="{{ emote.emote_img.url }}" download="{{ emote.title }}" class="btn btn-dark"> Download </a>
 
-            </div>
-            {% else %}
-            <div class="text-center">
-                <p class="text-danger">You must be logged in to download or favourite</p>
-            </div>
-            {% endif %}
-
-            {% if request.user == emote.user %}
-            <div class="text-center">
-                <a href="{% url 'edit_emote' emote.id %}" class="btn btn-primary 25">Edit</a>
-                <a href="{% url 'delete_emote' emote.id %}" class="btn btn-primary 25">Delete</a>
-            </div>
-            {% endif %}
         </div>
+        {% else %}
+        <div class="text-center">
+            <p class="text-danger">You must be logged in to download or favourite</p>
+        </div>
+        {% endif %}
+
+        {% if request.user == emote.user %}
+        <div class="text-center">
+            <a href="{% url 'edit_emote' emote.id %}" class="btn btn-primary 25">Edit</a>
+            <a href="{% url 'delete_emote' emote.id %}" class="btn btn-primary 25">Delete</a>
+        </div>
+        {% endif %}
     </div>
+</div>
 {% endblock %}

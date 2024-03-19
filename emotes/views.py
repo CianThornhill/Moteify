@@ -14,11 +14,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
+from .utils import is_favourite
 from .models import Emote, EMOTE_CATEGORY
 from .forms import EmoteForm
 
 from django.contrib import messages
-from .utils import is_favourite
+
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
@@ -48,10 +49,24 @@ class Emotes(ListView):
 class EmoteDetail(DetailView):
     """
     View Individual Emote
+    is_favourite function defined in utils.py
     """
     template_name = 'emotes/emote_detail.html'
     model = Emote
     context_object_name = 'emote'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        emote = self.get_object()
+        user = self.request.user
+
+        if user.is_authenticated:
+            context['is_favourite'] = is_favourite(user.id, emote.id)
+        else:
+            context['is_favourite'] = False
+
+        return context
+
 
 class AddEmote(LoginRequiredMixin, CreateView):
     """
@@ -95,6 +110,9 @@ class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 @login_required
 def Favourite_add(request, id):
+    """
+    Add or Remove a favourite
+    """
     emote = get_object_or_404(Emote, id=id)
     if emote.favourites.filter(id=request.user.id).exists():
         emote.favourites.remove(request.user)
@@ -109,6 +127,9 @@ def Favourite_add(request, id):
 
 @login_required
 def Favourite_list(request):
+    """
+    Favourites List View
+    """
     user_favourite_emotes = request.user.favourite.all()
 
     paginator = Paginator(user_favourite_emotes, 8)
@@ -120,9 +141,12 @@ def Favourite_list(request):
         {'page_obj': page_obj})
 
 
-# Repurpose above code for "My Emotes" page
+
 @login_required
 def My_emotes_list(request):
+    """
+    My Emotes List View
+    """
     user_uploaded_emotes = Emote.objects.filter(user=request.user)
 
     paginator = Paginator(user_uploaded_emotes, 8)
@@ -132,3 +156,4 @@ def My_emotes_list(request):
     return render(
         request, 'emotes/my_emotes.html',
         {'page_obj': page_obj})    
+
