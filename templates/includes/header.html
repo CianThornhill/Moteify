@@ -2,57 +2,68 @@
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark">
-          <!-- Logo -->
-          <a class="navbar-brand" href="{% url 'home:home' %}"><img src="{% static 'img/logo_temp.png' %}" alt="Moteify Logo" class="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
+    <!-- Logo -->
+    <a class="navbar-brand" href="{% url 'home:home' %}"><img src="{% static 'img/logo_temp.png' %}" alt="Moteify Logo"
+        class="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <!-- Navigational Items-->
-          <div class="collapse navbar-collapse nav-reg" id="navbarNav">
-          
-          <ul class="navbar-nav">
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'home:home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'emotes' %}">Emotes</a>
-              </li>
+    <!-- Navigational Items-->
+    <div class="collapse navbar-collapse nav-reg" id="navbarNav">
 
-              {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="#">My Emotes</a>
-              </li>
+      <ul class="navbar-nav">
+        
+        {% if not request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home:home' %}">Home</a>
+        </li>
+        {% endif %}
 
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_emote' %}">Add Emote</a>
-              </li>
-              
 
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'profiles:profile_view' %}">My Profile</a>
-              </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'emotes' %}">Emotes</a>
+        </li>
 
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-              </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'add_emote' %}">Add Emote</a>
+        </li>
 
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-              </li>
-              {% endif %}
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            My Profile
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'profiles:profile_view' %}">View Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'my_emotes' %}">My Emotes</a></li>
+            <li><a class="dropdown-item" href="{% url 'favourite_list' %}">My Favourites</a></li>
           </ul>
+        </li>
 
-          <!-- Search Bar-->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+        </li>
+
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      <!-- Search Bar
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline search-btn" type="submit">Search</button>
-          </form>
+          </form> -->
 
-        </div>
+    </div>
   </nav>
 </header>

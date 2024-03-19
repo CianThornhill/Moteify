@@ -46,7 +46,7 @@
         </div>
 
         <!-- Profile Bio Display-->
-        <div class="profile-info profile-bio text-center">
+        <div class="profile-bio">
             <h2>Bio:</h2>
             {% if user_profile.bio %}
             {{ user_profile.bio|safe }}
@@ -58,12 +58,13 @@
 
         <div class="div profile-buttons">
         <a href="{% url 'favourite_list' %}" class="btn btn-primary"> <h2>My Favourites</h2></a>
-        <a href="#" class="btn btn-primary"> <h2>My Emotes</h2></a>
+        <a href="{% url 'my_emotes' %}" class="btn btn-primary"> <h2>My Emotes</h2></a>
         </div>
 
 
         <!-- This form will  be within a Modal or another page to update your user profile on "Edit Profile Button"-->
         <div class="container profile-edit-container">
+        <br>   
         <h2> Edit Profile </h2>
             <form method="post" enctype="multipart/form-data" class="p-2 form">
                 {% csrf_token %}

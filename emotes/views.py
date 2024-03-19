@@ -20,7 +20,7 @@ from .forms import EmoteForm
 from django.contrib import messages
 from .utils import is_favourite
 
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 class Emotes(ListView):
@@ -109,13 +109,26 @@ def Favourite_add(request, id):
 
 @login_required
 def Favourite_list(request):
-    user_favourite_emotes = user_favourite_emotes = request.user.favourite.all()
+    user_favourite_emotes = request.user.favourite.all()
 
-    print("UserFavouriteEmotes:", user_favourite_emotes)
+    paginator = Paginator(user_favourite_emotes, 8)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     return render(
         request, 'emotes/favourite_emotes.html',
-        {'user_favourite_emotes': user_favourite_emotes})
+        {'page_obj': page_obj})
 
 
 # Repurpose above code for "My Emotes" page
-    
+@login_required
+def My_emotes_list(request):
+    user_uploaded_emotes = Emote.objects.filter(user=request.user)
+
+    paginator = Paginator(user_uploaded_emotes, 8)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(
+        request, 'emotes/my_emotes.html',
+        {'page_obj': page_obj})    

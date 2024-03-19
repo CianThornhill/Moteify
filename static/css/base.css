@@ -45,6 +45,9 @@ h1{
 
 main {
     display: flex;
+
+    /* fix for screen sizes smaller than 308px */
+    overflow: scroll;
 }
 
 .active {
@@ -108,7 +111,7 @@ a.nav-link {
     border-color: var(--mint_03);
 }
 
-/* --- Form --- */
+/* --- FORMS --- */
 
 .form {
     width: 100%;
@@ -124,6 +127,7 @@ a.nav-link {
     color: var(--white-faded);
 }
 
+
 /* --- PROFILE --- */
 .profile-container {
     display: flex;
@@ -137,18 +141,25 @@ a.nav-link {
     background-color: var(--background);
     width: 100%;
     border: 3px solid black;
-    margin: 25px;
+    border-radius: 5px;
     padding: 10px;
+
+}
+
+.profile-bio h2{
+    text-align: center;
 
 }
 
 .profile-info{
     border: 3px solid var(--background);
     width:100%;
+    border-radius: 0 0 5px 5px;
 }
 
 .profile-username {
     background-color: var(--background);
+    border-radius: 5px 5px 0 0;
     margin-top: 10px;
     width:100%;
 }
@@ -175,6 +186,8 @@ a.nav-link {
 .profile-edit-container{
     text-align:center;
     margin-top: 25px;
+    border-radius: 5px;
+    border: 3px solid black;
 
 }
 
@@ -183,7 +196,7 @@ a.nav-link {
     flex-direction: row;
 }
 .profile-buttons a {
-    margin: 10px;
+    margin: 1rem;
 }
 /* --- EMOTES LIST --- */
 
@@ -272,6 +285,7 @@ a.nav-link {
     margin-bottom: 25px;
     justify-content: center;
     background-color: var(--background);
+    border-radius: 5px;
 }
 
 .pagination a {
@@ -287,6 +301,16 @@ a.nav-link {
 .current {
     font-weight: bold;
     margin: 0 5px; /* Adjust this value to add space between current page indicator and pagination links */
+}
+
+/*--- Favourites List ---*/
+
+.favourites-title {
+    width:100%;
+    background-color: var(--background);
+    text-align:center;
+    margin-top:25px;
+    border-radius: 5px;
 }
 
 /* --- Footer --- */
