@@ -47,7 +47,7 @@ main {
     display: flex;
 
     /* fix for screen sizes smaller than 308px */
-    overflow: scroll;
+    overflow: auto;
 }
 
 .active {
