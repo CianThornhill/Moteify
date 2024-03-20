@@ -49,6 +49,8 @@ main {
 
     /* fix for screen sizes smaller than 308px */
     overflow: auto;
+
+    justify-content: center;
 }
 
 .active {
@@ -129,7 +131,15 @@ a.nav-link {
 .form-text {
     color: var(--white-faded);
 }
-
+/* --- Home --- */
+.home-container{
+    display:flex;
+    min-height:100%;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 25px;
+    max-width: 1200px;
+}
 
 /* --- PROFILE --- */
 .profile-container {
@@ -371,6 +381,7 @@ footer {
 .messages-container ul {
     list-style-type: none;
   }
+
 /* --- Categories --- */
 .happy {
     color: #FFD700;

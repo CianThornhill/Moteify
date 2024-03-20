@@ -91,6 +91,10 @@ class EditEmote(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Emote edited successfully!")
+        return super().form_valid(form)
 
 
 
@@ -104,6 +108,10 @@ class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Emote deleted successfully!")
+        return super().form_valid(form)
 
 
 @login_required
