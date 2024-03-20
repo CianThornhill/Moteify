@@ -65,7 +65,7 @@
         <!-- This form will  be within a Modal or another page to update your user profile on "Edit Profile Button"-->
         <div class="container profile-edit-container">
         <br>   
-        <h2> Edit Profile </h2>
+        <h2 class="underline"> Edit Profile </h2>
             <form method="post" enctype="multipart/form-data" class="p-2 form">
                 {% csrf_token %}
                 {{ form.media }}
@@ -74,6 +74,10 @@
             </form>
         </div>
         <!------------------------------------------------------------------------------------------------>
+
+        <div class="profile-buttons">
+            <a href="{% url 'profiles:delete_account' %}" class="btn btn-danger">Delete Account</a>
+        </div>
 
     </div>
 {% endblock %}
