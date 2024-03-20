@@ -44,7 +44,7 @@ class Emote(models.Model):
 
     user = models.ForeignKey(User, related_name='creator', on_delete=models.CASCADE)
     emote_img = CloudinaryField(default='placeholder', folder='emotes/', null=False, blank=False)
-    title = models.CharField(max_length=50, null=False, blank=False, validators=[slug_validator], unique=True)
+    title = models.CharField(max_length=25, null=False, blank=False, validators=[slug_validator], unique=True)
     category = models.CharField(max_length=50, choices=EMOTE_CATEGORY, default="Happy")
     favourites = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
     upload_date = models.DateTimeField(auto_now=True)
