@@ -9,7 +9,9 @@
         {% csrf_token %}
         {{ form.media }}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-primary mt-2" aria-label="Save Emote">Save</button>
+        <div class="save_emote">
+            <button type="submit" class="btn btn-primary mt-2" aria-label="Save Emote">Save</button>
+        </div>
     </form>
 </div>
 {% endblock %}

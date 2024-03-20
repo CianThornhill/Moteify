@@ -10,6 +10,15 @@ class EmoteForm(forms.ModelForm):
     class Meta:
         model = Emote
         fields = ['emote_img', 'title', 'category']
+        labels = {
+        'emote_img': 'Emote Image',
+        'title': 'Emote Title',
+        'category': 'Emote Category',
+        }
+        help_texts = {
+            'title': "Maximum 25 characters allowed. Only letters -'s and _'s",
+            'emote_img':"Image ratio must be 512 x 512 or 1024 x 1024",
+        }
 
     def clean_emote_img(self):
         emote_img = self.cleaned_data.get('emote_img')
@@ -20,9 +29,3 @@ class EmoteForm(forms.ModelForm):
             if (width, height) not in ((512, 512), (1024, 1024)):
                 raise forms.ValidationError("Image must be either 512x512 or 1024x1024 pixels.")
         return emote_img
-    
-    labels = {
-        'emote_img': 'Emote Image',
-        'title': 'Emote Title',
-        'category': 'Emote Category',
-    }
