@@ -6,67 +6,70 @@
 
 {% block content %}
 
-    <div class="profile-container" aria-label="User Profile">
-        
-        <!-- Profile Picture -->
-        <div class="text-center">
-            <div class="profile_pic_container">
-                {% if user_profile.profile_image %}
-                <img src= "{{ user_profile.profile_image.url }}" alt="Profile Picture" class="round-image">
-                {% else %}
-                <img src="{{ user_profile.default_image.url }}" alt="Default Picture" class="round-image">
-                {% endif %}
-            </div>
-        </div>
+<div class="profile-container" aria-label="User Profile">
 
-        <!-- Profile Username Display -->
-        <div class ="profile-username text-center">
-        <h2 class="section-title">{{ user_profile.user.username }}</h2>
-        </div>
-
-        <!-- Profile Display Name-->
-        <div class ="profile-info text-center" aria-label="Display Name">
-            <p>Display name:</p>
-            {% if user_profile.display_name %}
-            {{ user_profile.display_name|safe }}
+    <!-- Profile Picture -->
+    <div class="text-center">
+        <div class="profile_pic_container">
+            {% if user_profile.profile_image %}
+            <img src="{{ user_profile.profile_image.url }}" alt="Profile Picture" class="round-image">
             {% else %}
-            <p>"Edit Profile" below to add your Display name</p>
+            <img src="{{ user_profile.default_image.url }}" alt="Default Picture" class="round-image">
             {% endif %}
         </div>
-
-        <!-- Profile Bio Display-->
-        <div class="profile-bio" aria-label="Bio">
-            <h2>Bio:</h2>
-            {% if user_profile.bio %}
-            {{ user_profile.bio|safe }}
-            {% else %}
-            <p>"Edit Profile" below to add your bio.</p>
-            {% endif %}
-        </div>
-
-
-        <div class="div profile-buttons" aria-label="Profile Action Buttons">
-        <a href="{% url 'favourite_list' %}" class="btn btn-primary" aria-label="My Favourites"> <h2>My Favourites</h2></a>
-        <a href="{% url 'my_emotes' %}" class="btn btn-primary" aria-label="My Emotes"> <h2>My Emotes</h2></a>
-        </div>
-
-
-        <!-- This form will  be within a Modal or another page to update your user profile on "Edit Profile Button"-->
-        <div class="container profile-edit-container" aria-label="Edit Profile Form">
-        <br>   
-        <h2 class="underline"> Edit Profile </h2>
-            <form method="post" enctype="multipart/form-data" class="p-2 form">
-                {% csrf_token %}
-                {{ form.media }}
-                {{ form|crispy }}
-                <button type="submit" class="btn btn-primary mt-2">Save</button>
-            </form>
-        </div>
-        <!------------------------------------------------------------------------------------------------>
-
-        <div class="profile-buttons" aria-label="Delete Account Button">
-            <a href="{% url 'profiles:delete_account' %}" class="btn btn-danger">Delete Account</a>
-        </div>
-
     </div>
+
+    <!-- Profile Username Display -->
+    <div class="profile-username text-center">
+        <h2 class="section-title">{{ user_profile.user.username }}</h2>
+    </div>
+
+    <!-- Profile Display Name-->
+    <div class="profile-info text-center" aria-label="Display Name">
+        <p>Display name:</p>
+        {% if user_profile.display_name %}
+        {{ user_profile.display_name|safe }}
+        {% else %}
+        <p>"Edit Profile" below to add your Display name</p>
+        {% endif %}
+    </div>
+
+    <!-- Profile Bio Display-->
+    <div class="profile-bio" aria-label="Bio">
+        <h2>Bio:</h2>
+        {% if user_profile.bio %}
+        {{ user_profile.bio|safe }}
+        {% else %}
+        <p>"Edit Profile" below to add your bio.</p>
+        {% endif %}
+    </div>
+
+    <!-- Profile My Favourites / My Emotes Buttons-->
+    <div class="div profile-buttons" aria-label="Profile Action Buttons">
+        <a href="{% url 'favourite_list' %}" class="btn btn-primary" aria-label="My Favourites">
+            <h2>My Favourites</h2>
+        </a>
+        <a href="{% url 'my_emotes' %}" class="btn btn-primary" aria-label="My Emotes">
+            <h2>My Emotes</h2>
+        </a>
+    </div>
+
+    <!-- Edit Profile Form -->
+    <div class="container profile-edit-container" aria-label="Edit Profile Form">
+        <br>
+        <h2 class="underline"> Edit Profile </h2>
+        <form method="post" enctype="multipart/form-data" class="p-2 form">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary mt-2">Save</button>
+        </form>
+    </div>
+
+    <!-- Delete Account Link -->
+    <div class="profile-buttons" aria-label="Delete Account Button">
+        <a href="{% url 'profiles:delete_account' %}" class="btn btn-danger">Delete Account</a>
+    </div>
+
+</div>
 {% endblock %}

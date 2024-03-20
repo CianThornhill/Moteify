@@ -275,6 +275,9 @@ a.nav-link {
     height: auto;
 }
 
+.save_emote{
+    text-align:center;
+}
 /* --- EMOTE Detail --- */
 .emote-img {
     display: flex;
