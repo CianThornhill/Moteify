@@ -29,5 +29,6 @@ def delete_account(request):
 
         logout(request)
 
+        messages.success(request, "Account Deleted!")
         return redirect('emotes')
     return render(request, 'delete_account.html')
