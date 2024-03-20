@@ -4,14 +4,14 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="text-center mt-2">
+    <h2 class="text-center mt-2" aria-label="Confirm Emote Deletion">
         Confirm Emote Deletion
     </h2>
     <div class="d-flex justify-content-center pt-3">
-        <form method="post" class="text-center">
+        <form method="post" class="text-center" aria-label="Delete Emote Form">
             {% csrf_token %} 
             <p>Are you sure you want to delete "{{object.title}}"?</p>
-            <input type="submit" value="Confirm" class="btn btn-primary w-25">
+            <input type="submit" value="Confirm" class="btn btn-primary w-25" aria-label="Confirm Deletion Button">
         </form>
     </div>
 </div>

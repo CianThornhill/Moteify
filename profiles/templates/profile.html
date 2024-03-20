@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <div class="profile-container">
+    <div class="profile-container" aria-label="User Profile">
         
         <!-- Profile Picture -->
         <div class="text-center">
@@ -24,19 +24,8 @@
         <h2 class="section-title">{{ user_profile.user.username }}</h2>
         </div>
 
-        <!--DEBUGING DEFAULT USER PROFILE PICTURE ISSUE-->
-        <!-- <p><i> [This is for Debugging] </i></p>
-
-        <p>Default Static Image:</p><img src="{% static 'img/user_default.png' %}" alt="Default Picture">
-        <p>Default image url: {% static 'img/user_default.png' %}</p>
-        <p>UserProfile URL:{{ user_profile.profile_image.url }}</p>
-
-        <p><i> [End of Debugging] </i></p> -->
-        <!----------------------------------------------->
-
-
         <!-- Profile Display Name-->
-        <div class ="profile-info text-center">
+        <div class ="profile-info text-center" aria-label="Display Name">
             <p>Display name:</p>
             {% if user_profile.display_name %}
             {{ user_profile.display_name|safe }}
@@ -46,7 +35,7 @@
         </div>
 
         <!-- Profile Bio Display-->
-        <div class="profile-bio">
+        <div class="profile-bio" aria-label="Bio">
             <h2>Bio:</h2>
             {% if user_profile.bio %}
             {{ user_profile.bio|safe }}
@@ -56,14 +45,14 @@
         </div>
 
 
-        <div class="div profile-buttons">
-        <a href="{% url 'favourite_list' %}" class="btn btn-primary"> <h2>My Favourites</h2></a>
-        <a href="{% url 'my_emotes' %}" class="btn btn-primary"> <h2>My Emotes</h2></a>
+        <div class="div profile-buttons" aria-label="Profile Action Buttons">
+        <a href="{% url 'favourite_list' %}" class="btn btn-primary" aria-label="My Favourites"> <h2>My Favourites</h2></a>
+        <a href="{% url 'my_emotes' %}" class="btn btn-primary" aria-label="My Emotes"> <h2>My Emotes</h2></a>
         </div>
 
 
         <!-- This form will  be within a Modal or another page to update your user profile on "Edit Profile Button"-->
-        <div class="container profile-edit-container">
+        <div class="container profile-edit-container" aria-label="Edit Profile Form">
         <br>   
         <h2 class="underline"> Edit Profile </h2>
             <form method="post" enctype="multipart/form-data" class="p-2 form">
@@ -75,7 +64,7 @@
         </div>
         <!------------------------------------------------------------------------------------------------>
 
-        <div class="profile-buttons">
+        <div class="profile-buttons" aria-label="Delete Account Button">
             <a href="{% url 'profiles:delete_account' %}" class="btn btn-danger">Delete Account</a>
         </div>
 

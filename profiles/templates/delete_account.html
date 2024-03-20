@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Delete Account{% endblock %}
 {% block content %}
-    <div class="list-container">
+    <div class="list-container" aria-label="Delete Account Confirmation">
         <h2>Are you sure you want to delete your account?</h2>
-        <form method="post">
+        <form method="post" aria-label="Delete Account Form">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn btn-danger">Delete Account</button>
+            <button type="submit" class="btn btn-danger" aria-label="Confirm Account Deletion button">Delete Account</button>
         </form>
     </div>
 {% endblock %}
