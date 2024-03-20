@@ -6,7 +6,6 @@ from djrichtextfield.models import RichTextField
 
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 class Profile(models.Model):
     """ 
     Model for User Profiles 

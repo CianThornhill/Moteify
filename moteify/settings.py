@@ -36,12 +36,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', 'https://*.herokuapp.com']
 
-
-# ALLOWED_HOSTS = ['8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
-
-
 # Application definition
-
 INSTALLED_APPS = [
     #Django 
     'django.contrib.admin',

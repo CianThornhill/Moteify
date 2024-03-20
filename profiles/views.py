@@ -8,17 +8,9 @@ from .models import Profile
 
 @login_required
 def profile_view(request):
-    #Fetch or create UserProfile
     user_profile, created = Profile.objects.get_or_create(user=request.user)
-    
-    #Debugging Print Statements
-    print("Profile created:", created)
-    
+       
     if request.method == 'POST':
-        #Debugging Print Statements
-        print("Form data:", request.POST)
-        print("Files:", request.FILES)
-
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
@@ -27,16 +19,15 @@ def profile_view(request):
     else:
         form = UserProfileForm(instance=user_profile)
 
-    # Pass form to the template context
     return render(request, 'profile.html', {'form': form, 'user_profile': user_profile})
 
 @login_required
 def delete_account(request):
     if request.method == 'POST':
-        # Delete the user account
+
         request.user.delete()
-        # Log out the user
+
         logout(request)
-        # Redirect to a thank you page or home page
-        return redirect('emotes')  # Replace 'home' with the URL name of your home page
+
+        return redirect('emotes')
     return render(request, 'delete_account.html')

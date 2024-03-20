@@ -179,8 +179,8 @@ a.nav-link {
    
 }
 .profile_pic_container img {
-    width: 100%; /* Make the image fill the container */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
 }
 .round-image {
     border-radius: 50%;
@@ -237,10 +237,10 @@ a.nav-link {
 }
 
 .emote-container {
-    width: 100%; /* Ensure image takes full width of container */
-    max-width: 256px; /* Set maximum width */
-    height: auto; /* Allow the height to adjust according to aspect ratio */
-    overflow: hidden; /* Hide overflow if the image exceeds container size */
+    width: 100%;
+    max-width: 256px;
+    height: auto;
+    overflow: hidden;
 }
 
 .list-container {
@@ -260,9 +260,9 @@ a.nav-link {
 
 
 .emote-list-img {
-    display: block; /* Ensure image is treated as a block element */
-    width: 100%; /* Take full width of parent container */
-    height: auto; /* Allow height to adjust according to aspect ratio */
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* --- EMOTE Detail --- */
@@ -311,11 +311,11 @@ a.nav-link {
 }
 
 .pagination a {
-    color: var(--mint_03); /* Change this to your desired color */
-    font-size: 24px; /* Adjust font size for better visibility */
-    padding: 10px 10px; /* Add padding for easier tapping */
+    color: var(--mint_03);
+    font-size: 24px;
+    padding: 10px 10px;
     text-decoration: none;
-    margin: 0 5px; /* Adjust this value to add space between pagination links */
+    margin: 0 5px;
 }
 
 .pagination a:hover {
@@ -357,88 +357,98 @@ footer {
 }
 
 .social-icon:hover {
-    color: var(--mint_03); /* Change this to your desired hover color */
+    color: var(--mint_03);
     
 }
-
+/* --- Messages --- */
+.messages-container{
+    width:100%;
+    color:var(--mint_03);
+    background-color: var(--background);
+    border: 1px solid var(--off-white);
+    text-align: center;
+}
+.messages-container ul {
+    list-style-type: none;
+  }
 /* --- Categories --- */
 .happy {
-    color: #FFD700; 
-    border: 1px solid #FFD700; 
+    color: #FFD700;
+    border: 1px solid #FFD700;
 }
 
 .sad {
-    color: #4169E1; /* Royal Blue */
-    border: 1px solid #4169E1; /* Royal Blue */
+    color: #4169E1;
+    border: 1px solid #4169E1;
 }
 
 .excited {
-    color: #FF6347; /* Tomato */
-    border: 1px solid #FF6347; /* Tomato */
+    color: #FF6347;
+    border: 1px solid #FF6347;
 }
 
 .love {
-    color: #FF69B4; /* Hot Pink */
-    border: 1px solid #FF69B4; /* Hot Pink */
+    color: #FF69B4;
+    border: 1px solid #FF69B4;
 }
 
 .angry {
-    color: #FF4500; /* Orange Red */
-    border: 1px solid #FF4500; /* Orange Red */
+    color: #FF4500;
+    border: 1px solid #FF4500;
 }
 
 .laughing {
-    color: #00FF7F; /* Spring Green */
-    border: 1px solid #00FF7F; /* Spring Green */
+    color: #00FF7F;
+    border: 1px solid #00FF7F;
 }
 
 .cry {
-    color: #4682B4; /* Steel Blue */
-    border: 1px solid #4682B4; /* Steel Blue */
+    color: #4682B4;
+    border: 1px solid #4682B4;
 }
 
 .surprised {
-    color: #a71de2; /* Dark Violet */
-    border: 1px solid #a71de2; /* Dark Violet */
+    color: #a71de2;
+    border: 1px solid #a71de2;
 }
 
 .confused {
-    color: #8A2BE2; /* Blue Violet */
-    border: 1px solid #8A2BE2; /* Blue Violet */
+    color: #8A2BE2;
+    border: 1px solid #8A2BE2;
 }
 
 .thumbs-up-down {
-    color: #32CD32; /* Lime Green */
-    border: 1px solid #32CD32; /* Lime Green */
+    color: #32CD32;
+    border: 1px solid #32CD32;
 }
 
 .celebration {
-    color: #FFA500; /* Orange */
-    border: 1px solid #FFA500; /* Orange */
+    color: #FFA500;
+    border: 1px solid #FFA500;
 }
 
 .dance {
-    color: #FF1493; /* Deep Pink */
-    border: 1px solid #FF1493; /* Deep Pink */
+    color: #FF1493;
+    border: 1px solid #FF1493;
 }
 
 .cool {
-    color: #00FFFF; /* Cyan */
-    border: 1px solid #00FFFF; /* Cyan */
+    color: #00FFFF;
+    border: 1px solid #00FFFF;
 }
 
 .cute {
-    color: #FFC0CB; /* Pink */
-    border: 1px solid #FFC0CB; /* Pink */
+    color: #FFC0CB;
+    border: 1px solid #FFC0CB;
 }
 
 .funny {
-    color: #FFD700; /* Gold */
-    border: 1px solid #FFD700; /* Gold */
+    color: #FFD700;
+    border: 1px solid #FFD700;
 }
 
 .other {
-    color: #808080; /* Gray */
-    border: 1px solid #808080; /* Gray */
+    color: #808080;
+    border: 1px solid #808080;
 }
 /* ------------------ */

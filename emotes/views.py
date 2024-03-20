@@ -22,7 +22,6 @@ from django.contrib import messages
 
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-# Create your views here.
 
 class Emotes(ListView):
     """
@@ -31,15 +30,13 @@ class Emotes(ListView):
     template_name = 'emotes/emotes.html'
     model = Emote
     context_object_name = 'emotes'
-    extra_context = {'emote_categories': EMOTE_CATEGORY} # Pass EMOTE_CATEGORY to templating
+    extra_context = {'emote_categories': EMOTE_CATEGORY}
     paginate_by = 8
 
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        # Get selected category from request
         category = self.request.GET.get('category')
-        # Filter queryset based on selected category
         if category:
             queryset = queryset.filter(category=category)
         return queryset
@@ -79,6 +76,7 @@ class AddEmote(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, "Emote added successfully!")
         return super(AddEmote, self).form_valid(form)
 
 

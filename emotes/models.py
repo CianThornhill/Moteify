@@ -6,7 +6,6 @@ from datetime import datetime
 from cloudinary.models import CloudinaryField
 from django.core.validators import RegexValidator
 
-# Categories
 EMOTE_CATEGORY = (
     ("Happy", "Happy"),
     ("Sad", "Sad"),
@@ -26,10 +25,10 @@ EMOTE_CATEGORY = (
     ("Other", "Other")
 )
 
-# Expression pattern that allows only alphanumeric characters and hyphens
+#Expression pattern that allows only alphanumeric characters and hyphens
 slug_pattern = r'^[a-zA-Z0-9-]+$'
 
-# Validator using RegexValidator
+#Validator using RegexValidator
 slug_validator = RegexValidator(
     regex=slug_pattern,
     message='Only alphanumeric characters and hyphens are allowed.'

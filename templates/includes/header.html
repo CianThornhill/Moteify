@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse nav-reg" id="navbarNav">
 
       <ul class="navbar-nav">
-        
+
         {% if not request.user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'home:home' %}">Home</a>
@@ -34,9 +34,8 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            My Profile
-          </a>
+            aria-expanded="false">My Profile</a>
+            
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'profiles:profile_view' %}">View Profile</a></li>
             <li><a class="dropdown-item" href="{% url 'my_emotes' %}">My Emotes</a></li>
@@ -57,13 +56,18 @@
         </li>
         {% endif %}
       </ul>
-
-      <!-- Search Bar
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline search-btn" type="submit">Search</button>
-          </form> -->
-
     </div>
   </nav>
+
+  <!-- Messages -->
+  <div class="messages-container">
+    {% if messages %}
+    <ul id="messages" class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
 </header>
