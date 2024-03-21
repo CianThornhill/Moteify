@@ -31,7 +31,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', 'https://*.herokuapp.com']
@@ -199,7 +199,7 @@ ACCOUNT_SIGNUP_REDIRECT_URL = 'profiles:profile_view'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

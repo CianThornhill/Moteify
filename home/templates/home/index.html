@@ -3,18 +3,46 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="home-container">
-    <section class="text-center" aria-label="Welcome Page Content">
-        <h1> Welcome to Moteify</h1>
-        <p>
-            "Welcome to Moteify, your ultimate destination for emote sharing! Express yourself like never before with
-            our vibrant community of creators and users. Whether you're looking to spice up your Twitch streams, add
-            some flair to your Discord server, or simply want to discover the latest trending emotes, Moteify has you
-            covered. Upload your own creations to share them with the world or explore a vast library of emotes crafted
-            by talented individuals from
-            around the globe. Join us in celebrating the endless possibilities of expression through emotes, and let
-            your creativity shine!"
-        </p>
-    </section>
+<div class="h-container">
+    <div class="h-row">
+        <div class="col-md-6 h-image-container">
+            <img src="/static/img/h1.webp" class="img-fluid h-img" alt="Moteify Display Image">
+        </div>
+        <div class="col-md-6 h-text-section">
+            <div class="h-text">
+                <h3>Share your creations!</h3>
+                <p>Upload your own creations to share them with the world or explore a vast library of emotes crafted
+                    by talented individuals from
+                    around the globe. Join us in celebrating the endless possibilities of expression through emotes, and let
+                    your creativity shine!</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-row">
+        <div class="col-md-6 h-image-container">
+            <img src="/static/img/h_2.webp" class="img-fluid h-img" alt="Twitch Discord Image">
+        </div>
+
+        <div class="col-md-6 h-text-section">
+            <div class="h-text">
+                <h3>Emotes for use on Discord & Twitch</h3>
+                <p> Whether you're looking to spice up your Twitch streams, add
+                    some flair to your Discord server, or simply want to discover the latest trending emotes, Moteify has you
+                    covered.</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-row">
+        <div class="col-md-6 h-image-container">
+            <img src="/static/img/h_3.webp" class="img-fluid h-img" alt="Sign Up Image">
+        </div>
+        <div class="col-md-6 h-text-section">
+            <div class="h-text">
+                <h3>Sign up and get started!</h3>
+                <p>Sign up using the button below and get started sharing, downloading and favouriting!</p>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}

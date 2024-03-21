@@ -132,6 +132,8 @@ a.nav-link {
     color: var(--white-faded);
 }
 /* --- Home --- */
+
+
 .home-container{
     display:flex;
     min-height:100%;
@@ -139,7 +141,12 @@ a.nav-link {
     align-content: center;
     padding-top: 25px;
     max-width: 1200px;
+    /*background-image: url('{% static "img/site_on_display_bg.jpg" %}')*/
+    background-image: url("../img/site_on_display_bg.jpg") !important; 
+    background-size: cover;
+    background-position: center;
 }
+
 
 /* --- PROFILE --- */
 .profile-container {
