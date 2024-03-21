@@ -131,11 +131,10 @@ a.nav-link {
 }
 /* --- Home --- */
 
-.h-container{
+.h-container {
     max-width: 1200px;
     flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0.5rem;
     align-items: stretch;
 }
 
@@ -190,6 +189,11 @@ a.nav-link {
     background: var(--black);
 }
 
+@media (max-width: 860px) {
+    .h-text{
+        font-size:small;
+    }
+}
 /* --- PROFILE --- */
 .profile-container {
     display: flex;
