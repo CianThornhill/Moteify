@@ -22,7 +22,7 @@ class Profile(models.Model):
     )
 
     default_image = models.ImageField(
-        default="/static/img/user_default.png" 
+        default="/static/img/user_default.webp" 
     )
 
     display_name = models.CharField(max_length=25, blank=True, null=True)

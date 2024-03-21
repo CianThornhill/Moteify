@@ -5,20 +5,23 @@
 {% block title %}{% trans "Sign In" %}{% endblock title %}
 
 {% block content %}
-<div class="container text-center">
+<div class="container text-center p-2">
   <h1>{% trans "Sign In" %}</h1>
+  <hr>
 
-  <p>{% blocktrans %}If you have not created an account yet, then please
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+  <p>{% blocktrans %}If you have not created an account yet, please Register below.
+  <br>
+  <a href="{{ signup_url }}" class="btn btn-primary" aria-label="Sign Up button">Register</a>{% endblocktrans %}</p>
 
-  <form class="form p-2" method="POST" action="{% url 'account_login' %}">
+  <form class="form p-2" method="POST" action="{% url 'account_login' %}" aria-label="{% trans 'Sign In Form' %}">
     {% csrf_token %}
     {{ form|crispy }}
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
     <button class="btn btn-primary w-24 mb-2" type="submit">{% trans "Sign In" %}</button>
-    <a class="button secondaryAction d-block" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <br>
+    <a class="btn btn-dark secondaryAction w24 mb-2" href="{% url 'account_reset_password' %}" aria-label="{% trans 'Forgot Password' %}">{% trans "Forgot Password?" %}</a>
   </form>
 </div>
 
