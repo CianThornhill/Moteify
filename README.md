@@ -71,23 +71,25 @@ All below User stories can be found within the GitHub Projects Kanban board link
 | I want to be able to link people to my portfolio and art services from my profile | 1. User Profiles are publically viewable by other registered users while remaining secure.|
 
 ---
-## Design
+## Ideation
 ---
-### Ideation
 
-#### Project MVP Features
+
+### Project MVP Features
 - User Sign up / log in / verification
 - Emote Gallery Page which shows uploaded Emotes (paginated)
 - Users can Upload emotes. They can then edit and delete their uploads on their “My Emotes” Page. (/ User profile page which can also let them upload a profile image and link to their portfolio’s with a bio)
 - Users can save Emotes to their Favourites and view their Favourites from their my emotes page in “my favourites”(/ User profile page)
 
 
-#### Project Extended Features
+### Project Extended Features
 
 - Clicking on a Link in Emote Gallery brings you to that Individual emotes page.
 - On an individual Emote page, Users can Like or Dislike an upload.
 - Emotes have a categories field, allowing for the creation of a “Category” filter in the Emote Gallery page to filter for “Happy”, “Sad”, “laughing”, “animated” etc.
 
+---
+## Design
 ---
 ### Wireframes
 
@@ -118,3 +120,90 @@ The overall layout and design however was established in the initial version and
 <img src="https://i.imgur.com/KtKU3wa.png">
 
 ---
+
+### Models
+
+#### Built in
+##### User / User Registration
+- User Registration and log in was handled with Django's built in User Model in combination with Django AllAuth.
+
+#### Custom Models
+##### Emote Model
+| Name  | Type |
+| -------- | ------- |
+| User  | ForeignKey |
+| emote_img | CloudinaryField |
+| title | Charfield |
+| category | Charfield |
+| favourites | ManyToMany |
+| upload_date | DateTimeField |
+
+##### Profile Model
+| Name  | Type |
+| -------- | ------- |
+| User  | OneToOneField |
+| profile_image | CloudinaryField |
+| default_image | ImageField |
+| display_name | Charfield |
+| bio | RichTextField |
+
+### Visual Design
+
+#### Colour Scheme
+
+For the color scheme of the site, I based it off a palette I discovered on https://colorhunt.co , a site for Designers and Artists to get color palette inspiration for their projects.
+
+<p align="center"><img src="https://i.imgur.com/NDfr2at.png" width="500"></p>
+
+- For the site, I wanted to go with a "Dark" scheme, as I find them much easier to look at and more appealing. I also think the site appeals to people who are commonly on PC watching streams, communication on discord servers, creating digital art etc. This target audience commonly prefers Dark web pages over standard schemes.
+- Purple is a color associated commonly with both Twitch and Discord, the main platforms currently that are associated with emote use, and so I wanted to ensure that was my primary color.
+- Bright mint and Blue worked as compliments to this to stand out from the dark backgrounds.
+- I muted the colours and changed the hue's and saturations slightly to make them more web friendly, and then saved them as root variables within my CSS file to allow me to ensure that any changes I made to a color would cascade throughout the project.
+
+#### Font
+
+For my Font, I did some research on some commonly used font pairs for web design on sites such as: 
+- https://elementor.com/blog/font-pairing/
+- https://www.pagecloud.com/blog/best-google-fonts-pairings 
+
+I decided that due to the content of this website, I wanted to use two sans-serif fonts that were easily ledgable at smaller sizes, and felt casual and functional.
+
+In the end I settled on "Roboto" for the Headings and "Nunito" for the main font. 
+These were gathered and imported to CSS using Google Fonts.
+
+#### Logo and Display Content
+
+Prior to re-skilling into coding, I studied Game Art and Design in college, and so I made use of these skills to generate some of my own content for the site so that I didn't need to fill the site with placeholder content.
+
+For the logo I used Photoshop and a free online font called "QUARTZO" to develop a quick and simple logo for use in the navbar.
+
+<p align="center"><img src="https://i.imgur.com/CUzZ7gO.png" width="500"></p>
+
+For the emotes displayed on the site, I developed several emotes of varying styles and emotions using Procreate on my Ipad prior to beginning the project and continuing during project development at times when I needed to take a break from coding.
+
+I found that I'm happy I did this, as it enabled me to show the use case of the site more clearly instead of with placeholder imagery, and also allows me to show my design skill when displaying the project as a portfolio piece.
+
+<p align="center"><img src="https://i.imgur.com/9SuUA8U.png" width="500"></p>
+
+### Site Showcase
+
+### Future Implementations
+
+### Device Compatibility / Responsiveness
+
+### Bug Documentation
+
+### Technologies Used
+
+### Libraries and Frameworks
+
+### Additional Tools
+
+### Deployment
+
+### Testing
+
+### Credits & References 
+
+### Acknowledgements
+
