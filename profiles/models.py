@@ -6,23 +6,24 @@ from djrichtextfield.models import RichTextField
 
 from cloudinary.models import CloudinaryField
 
+
 class Profile(models.Model):
-    """ 
-    Model for User Profiles 
+    """
+    Model for User Profiles
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
+
     profile_image = CloudinaryField(
-        folder = "user_images",
-        default = None,
+        folder="user_images",
+        default=None,
         transformation=[
-            {'width':512, 'height': 512, 'crop': 'fill'}
+            {'width': 512, 'height': 512, 'crop': 'fill'}
         ],
         null=True
     )
 
     default_image = models.ImageField(
-        default="/static/img/user_default.webp" 
+        default="/static/img/user_default.webp"
     )
 
     display_name = models.CharField(max_length=25, blank=True, null=True)

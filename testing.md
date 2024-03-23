@@ -38,3 +38,26 @@ https://cdnjs.com/libraries/bootstrap/5.3.2
 Then added the appropriate script link with corect sha value to remove the validation errors.
 
 ----
+
+## Python Validation
+
+All Python Validation was completed by using https://pep8ci.herokuapp.com/# on my .py files. 
+
+| File | Result | Notes |
+| ---- | ---- | ---- |
+| moteify: <br>settings.py | <img src="https://i.imgur.com/FuQBFx7.png"> | Line length note <br> however formatting was completed with autopep8 Python formatter |
+| moetify:<br> urls.py  |<img src="https://i.imgur.com/X2n8oAS.png">  | No Errors  |
+| emotes:<br> models.py | <img src="https://i.imgur.com/gNPmQ4X.png"> | Line length note <br> however formatting was completed with autopep8 Python formatter   |
+| emotes:<br>views.py  | <img src="https://i.imgur.com/cM5f2m5.png"> | No errors  |
+| emotes:<br>admin.py  | <img src="https://i.imgur.com/VrhotLS.png">| No errors  |
+| emotes:<br>utils.py | <img src="https://i.imgur.com/QfSz9vb.png">  | No errors  |
+| emotes:<br>forms.py | <img src="https://i.imgur.com/J5cNfO8.png"> | No errors  |
+| home:<br>urls.py<br>views.py  | img not included due to small size of files and effect of app |No errors  |
+| profiles:<br>models.py | <img src="https://i.imgur.com/vRtPqxE.png"> | No errors  |
+| profiles:<br>urls.py | <img src="https://i.imgur.com/XcVxydp.png"> | No errors |
+| profiles:<br> views.py | <img src="https://i.imgur.com/A6ZBPZL.png"> |  Line length note <br> however formatting was completed with autopep8 Python formatter  |
+| python:<br>forms.py | <img src="https://i.imgur.com/9WwVW26.png"> | No errors  |
+| python:<br>admin.py | <img src="https://i.imgur.com/zRLZ1tR.png"> | No errors  |
+|  | |  |
+
+## Manual Testing

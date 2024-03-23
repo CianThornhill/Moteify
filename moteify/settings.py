@@ -21,7 +21,7 @@ if os.path.isfile("env.py"):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,12 +33,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', 'https://*.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', '.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-cianthornhill-moteify-9xqp3rbpowy.ws-eu110.gitpod.io', 'https://*.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
-    #Django 
+    # Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,9 +79,9 @@ DJRICHTEXTFIELD_CONFIG = {
     'settings': {
         'toolbar': [
             ['Format', 'Bold', 'Italic', 'Underline'],
-            ['NumberedList','BulletedList'], ['Undo', 'Redo'],
+            ['NumberedList', 'BulletedList'], ['Undo', 'Redo'],
         ],
-        'format_tags': 'p;h1;h2;h3'   
+        'format_tags': 'p;h1;h2;h3'
     }
 }
 
@@ -200,7 +202,7 @@ ACCOUNT_SIGNUP_REDIRECT_URL = 'profiles:profile_view'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type

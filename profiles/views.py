@@ -6,12 +6,14 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from .models import Profile
 
+
 @login_required
 def profile_view(request):
     user_profile, created = Profile.objects.get_or_create(user=request.user)
-       
+
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        form = UserProfileForm(
+            request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully!')
@@ -20,6 +22,7 @@ def profile_view(request):
         form = UserProfileForm(instance=user_profile)
 
     return render(request, 'profile.html', {'form': form, 'user_profile': user_profile})
+
 
 @login_required
 def delete_account(request):

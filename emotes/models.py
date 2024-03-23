@@ -25,10 +25,10 @@ EMOTE_CATEGORY = (
     ("Other", "Other")
 )
 
-#Expression pattern that allows only alphanumeric characters and hyphens
+# Expression pattern that allows only alphanumeric characters and hyphens
 slug_pattern = r'^[a-zA-Z0-9-]+$'
 
-#Validator using RegexValidator
+# Validator using RegexValidator
 slug_validator = RegexValidator(
     regex=slug_pattern,
     message='Only alphanumeric characters and hyphens are allowed.'
@@ -38,20 +38,25 @@ slug_validator = RegexValidator(
 class Emote(models.Model):
     """
     Model to create and manage emotes.
-    Title validates with slug_pattern variable to ensure Emotes are limited to readable, usable names that can be implemented as URLS, and also adds unique=True to ensure all emotes have unique title.
+    Title validates with slug_pattern variable to ensure Emotes are limited to readable,
+    usable names that can be implemented as URLS,
+    and also adds unique=True to ensure all emotes have unique title.
     """
 
-    user = models.ForeignKey(User, related_name='creator', on_delete=models.CASCADE)
-    emote_img = CloudinaryField(default='placeholder', folder='emotes/', null=False, blank=False)
-    title = models.CharField(max_length=25, null=False, blank=False, validators=[slug_validator], unique=True)
-    category = models.CharField(max_length=50, choices=EMOTE_CATEGORY, default="Happy")
-    favourites = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
+    user = models.ForeignKey(
+        User, related_name='creator', on_delete=models.CASCADE)
+    emote_img = CloudinaryField(
+        default='placeholder', folder='emotes/', null=False, blank=False)
+    title = models.CharField(max_length=25, null=False, blank=False, validators=[
+                             slug_validator], unique=True)
+    category = models.CharField(
+        max_length=50, choices=EMOTE_CATEGORY, default="Happy")
+    favourites = models.ManyToManyField(
+        User, related_name='favourite', default=None, blank=True)
     upload_date = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-upload_date']
-    
+
     def __str__(self):
         return str(self.title)
-
-    

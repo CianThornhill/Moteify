@@ -3,6 +3,7 @@ from .models import Emote
 
 # Register your models here.
 
+
 @admin.register(Emote)
 class EmoteAdmin(admin.ModelAdmin):
     list_display = (
@@ -13,7 +14,7 @@ class EmoteAdmin(admin.ModelAdmin):
         'upload_date',
     )
 
-    list_filter=('user','category',)
+    list_filter = ('user', 'category',)
 
     def get_emote_img_url(self, obj):
         return obj.emote_img.url if obj.emote_img else None

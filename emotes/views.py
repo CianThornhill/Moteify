@@ -23,6 +23,7 @@ from django.contrib import messages
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+
 class Emotes(ListView):
     """
     View All Emotes
@@ -33,7 +34,6 @@ class Emotes(ListView):
     extra_context = {'emote_categories': EMOTE_CATEGORY}
     paginate_by = 8
 
-
     def get_queryset(self):
         queryset = super().get_queryset()
         category = self.request.GET.get('category')
@@ -41,7 +41,6 @@ class Emotes(ListView):
             queryset = queryset.filter(category=category)
         return queryset
 
-    
 
 class EmoteDetail(DetailView):
     """
@@ -91,11 +90,10 @@ class EditEmote(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
-    
+
     def form_valid(self, form):
         messages.success(self.request, "Emote edited successfully!")
         return super().form_valid(form)
-
 
 
 class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -108,7 +106,7 @@ class DeleteEmote(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
-    
+
     def form_valid(self, form):
         messages.success(self.request, "Emote deleted successfully!")
         return super().form_valid(form)
@@ -147,7 +145,6 @@ def Favourite_list(request):
         {'page_obj': page_obj})
 
 
-
 @login_required
 def My_emotes_list(request):
     """
@@ -161,5 +158,4 @@ def My_emotes_list(request):
 
     return render(
         request, 'emotes/my_emotes.html',
-        {'page_obj': page_obj})    
-
+        {'page_obj': page_obj})
