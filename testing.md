@@ -6,7 +6,7 @@ I used https://validator.w3.org on my html and CSS files.
 
 ---
 
-### Results:
+### HTML Results:
 | File | URL | Results |
 |-----|-----|-----|
 | Homepage |https://validator.w3.org/nu/?doc=https%3A%2F%2Fmoteify-5e8f7613a374.herokuapp.com%2F&showsource=yes| No Errors  |
@@ -21,6 +21,11 @@ I used https://validator.w3.org on my html and CSS files.
 | Delete Account |https://validator.w3.org/nu/?doc=https%3A%2F%2Fmoteify-5e8f7613a374.herokuapp.com%2Faccounts%2Flogin%2F%3Fnext%3D%2Fprofiles%2Fdelete_account%2F&showsource=yes| No errors. Trailing slash on input marked as info  |
 |  |  |  |
 
+### CSS Results
+| File | Result | Notes |
+| ---- | ---- | ---- |
+| base.css | <img src="https://i.imgur.com/1fCQgsd.png"> | No errors found |
+| | | |
 Prior to completing the above tests, HTML validator had spotted 2 issues which were resolved prior to completing testing:
 
 ### Bug 1 
@@ -61,3 +66,52 @@ All Python Validation was completed by using https://pep8ci.herokuapp.com/# on m
 |  | |  |
 
 ## Manual Testing
+### Unregistered / Non Logged in user
+| Page / Element | Action | Expected Outcome | Result |
+|----|----|----|----|
+|  |  |  |  |
+| Navbar | Click Logo | Links to Homepage | Pass |
+| Navbar | Click "Home"| Links to Homepage| Pass |
+| Navbar | Click "Emotes"| Links to Emotes page| Pass |
+| Navbar | Click "Register" | Links to Registration | Pass |
+| Navbar | Click "Login" | Links to Login Page  | Pass |
+| Emotes | Select "category" from dropdown and click filter | Emotes are filtered to show only<br>emotes of that category  | Pass  |
+| Emotes  | View individual emote by clicking | User is brought to individual emote page  | Pass |
+| Emote_detail | View access only | User can view emote but not favourite or view full image.<br>User also cannot edit or delete emote. | Pass |
+| Footer  | Click Social Icons  | Links to various socials in new tab | Pass  |
+| Signup | Fill form with valid details and submit with "signup" button  | User is signed up, logged in and brought to their newly created profile page.  | Pass |
+| Signup  | Click "Already have an account? [Sign in]"  | User is brought to log in page  | Pass |
+| Login | Enter Correct Details and "sign in"| User is redirected to emotes  | Pass  |
+| Login | Forgot Password link | redirects to forgot password reset workflow<br>[Password reset link not functioning at this time]<br>Temporary password reset info added | Pass <br> Reset not implemented  |
+
+### Logged in User
+| Page / Element | Action | Expected Outcome | Result |
+|----|----|----|----|
+|  |  |  |  |
+| Navbar | Click Logo | Links to Homepage | Pass |
+| Navbar | Click "Emotes"| Links to Emotes page| Pass |
+| Navbar | Click "Add Emote" | Links to Emote Upload form  |  |
+| Navbar | Click "My Profile" | Shows Dropdown options<br> - View profile <br> - My favourites <br> - My Emotes | Pass |
+| Navbar | Click My Profile Drop down options | All options link to appropriate pages | Pass |
+| Add Emote | Click "Save" after adding valid details | Emote added and displayed on "emotes" page<br>User is redirected to emotes  | Pass |
+| Add Emote | Click "Save" after submitting invalid details | Form does not submit<br>-appropriate help text highlighted | Pass |
+| Emote Detail  | Emote owner view | Emote owner can view Edit and Delete options | Pass |
+| Emote Detail | Emote owner clicks "edit"  | Emote owner brought to edit form page  | Pass |
+| Emote Edit  | Emote owner submits valid edit form | Emote is edited and user is redirected back to emotes | Pass |
+| Emote Edit | Click "Save" after submitting invalid details | Form does not submit<br>-appropriate help text highlighted | Pass |
+| Emote Detail  | Emote owner clicks "delete" | Emote owner brought to Delete page | Pass |
+| Emote Delete | Emote owner clicks "confirm" | Emote is deleted from database and no longer shown<br>User is redirected back to emotes  | Pass |
+| Profile  | User enters unedited Profile Page| User is shown default values and Edit Form | Pass |
+| Profile  | User clicks submits valid Edit form | Profile is updated with new information and displayed | Pass |
+| Profile | User clicks "favourites" or "my emotes"| User is brought to appropriate favourites or my emotes page  | Pass  |
+| My Emotes | User views their emotes | User is shown only their uploads | Pass  |
+| My Favourites | User views their favourites  | User is shown only their favourites  | Pass  |
+| My Emotes | User clicks an emote  | User is brought to that emotes individual view | Pass |
+| My Favourites | User clicks an emote  | User is brought to that emotes individual view | Pass |
+| Emote Detail | User clicks "Favourite" button | Emote is Favourited or Unfavourited depending on status<br>- And is then displayed in user's favourites  | Pass  |
+| Emote Detail | User clicks "View Full image" | User is shown full image view so that they can "save as" | Pass |
+| Navbar  | User clicks "Logout" | User is brought to logout Page | Pass  |
+| Logout | User clicks "Sign Out" | User is Signed Out and redirected to Homepae<br> - Navbar updated accordingly to non-logged in options | Pass |
+| Profile | User clicks "delete account" button  | User is brought to delete account confirmation page | Pass |
+| Delete Account | User confirms accoutn deletion | User's account and their associated content is also deleted<br> - Note: User is redirected to emotes instead of home for some reason but believe this is okay. | Pass |
+|  |  |  |  |
