@@ -71,6 +71,26 @@ All below User stories can be found within the GitHub Projects Kanban board link
 | I want to be able to link people to my portfolio and art services from my profile | 1. User Profiles are publically viewable by other registered users while remaining secure.|
 
 ---
+## Workflow and Methodologies
+---
+
+For this project I implemented an Agile Methodology using the MOSCOW prioritization workflow. Having made use of these workflows and methodologies during Hackathon projects, I was familiar with the process and found that they were still very useful in the context of an individual project: 
+
+- In combination with the development of my ERD and Wireframes, they forced me to think about what features were truly needed and if I was viewing them from the perspective of a user through creating the tasks based largely on a set of extensive user stories.
+- During the completion of the project, checking my board and breaking down each segment into maneagable tasks allowed me to keep track of what I was working on, and what I could move on to when I was done.
+- Initial planning and management of my Kanban board allowed me to better timekeep and prevent scope creep.
+
+<img src=" https://i.imgur.com/qm7p7XY.png">
+
+- Using Labels, I assigned MOSCOW priortization to each user story, I could then view these within my Project Kanban board at any time and edit them accordingly if required as time and scope became more in question.
+
+<p align="center"><img src="https://i.imgur.com/22h7aun.png"></p>
+
+- I also used markdown check boxes to allow me to tick off more maneable bites of larger User Story tasks which proved both satisfying and useful.
+
+You can find my Kanban board publically linked within the "projects" section of this Github Repo.
+
+---
 ## Ideation
 ---
 
@@ -187,6 +207,7 @@ I found that I'm happy I did this, as it enabled me to show the use case of the 
 
 ### Site Showcase
 
+
 ### Future Implementations
 
 ### Device Compatibility / Responsiveness
@@ -202,6 +223,8 @@ I found that I'm happy I did this, as it enabled me to show the use case of the 
 ### Deployment
 
 ### Testing
+
+#### Extensive Validation and Manual Testing Performed and documented. Documentation can be found here:<br> [Testing Documentation](testing.md)
 
 ### Credits & References 
 
