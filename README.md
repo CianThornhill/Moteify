@@ -92,8 +92,6 @@ You can find my Kanban board publically linked within the "projects" section of 
 
 ---
 ## Ideation
----
-
 
 ### Project MVP Features
 - User Sign up / log in / verification
@@ -110,7 +108,7 @@ You can find my Kanban board publically linked within the "projects" section of 
 
 ---
 ## Design
----
+
 ### Wireframes
 
 Once I had the general idea for the site figured out and developed a majority of the user stories, I set about creating wireframes with that information in mind.
@@ -205,7 +203,8 @@ I found that I'm happy I did this, as it enabled me to show the use case of the 
 
 <p align="center"><img src="https://i.imgur.com/9SuUA8U.png" width="500"></p>
 
-### Site Showcase
+----
+## Site Showcase
 
 ![Homepage](https://i.imgur.com/PwlCCaD.png)
 
@@ -217,12 +216,12 @@ I found that I'm happy I did this, as it enabled me to show the use case of the 
 
 ![Profile](https://i.imgur.com/HJGHpBj.png)
 
-
-### Future Implementations
+----
+## Future Implementations
 
 There were several features during the initial ideation of the project that were cut based on scope and timing considerations. A couple others were cut during production due to issues with functionality for features that were lower down on the MOSCOW prioritisation.
 
-#### Cut During Production but Planned for future iterations
+### Cut During Production but Planned for future iterations
 
 - Direct download button which serves image directly to local storage.
   - I attempted several times to get this working in the project, but issues arose with Cloudinary serving the image directly to the users computer and so the download button was temporarily changed to the option to view the full res image for "save as" functionality.
@@ -231,7 +230,7 @@ There were several features during the initial ideation of the project that were
 - Profile Pages Viewable by other users.
   - In future I'd like users to be able to view other user's profiles and see that users bio and uploads from the view. In that way, users can benefit from sharing their porftolio and details if people who find their emotes good wish to comission them etc.
 
-#### Further down the Road
+### Further down the Road
 
 - Paid Download Support
   - In future, I'd like to enable users to create emote "packs" or place payment restrictions on emote downloads. This would require significant implementation and possibly a redesign of the project but the learnings I've learned here should be applicable.
@@ -240,24 +239,65 @@ There were several features during the initial ideation of the project that were
   - At the moment, user sign in and login has been purposely kept relatively light due to time constraints and the scope of the project. In future, I'd like to have a more robust user registration that ensures emails are valid and has sufficient password reset functionality that serves reset emails to users.
 
 
+## Device Compatibility / Responsiveness
 
-### Device Compatibility / Responsiveness
+## Bug Documentation
 
-### Bug Documentation
+## Technologies Used
+- HTML
+- CSS
+- Python
+- Javascript
+- Git - Version control.
+- Gitpod - Online cloudbased IDE for development.
+- GitHub - Storage and management of code repository.
+- GitHub Projects - Task Management and Agile workflow implementation.
+- Django - Python Framework used as core pillar of project.
+- Bootstrap - Framework for HTML elements.
+- Cloudinary - Cloud-based media storage.
+- ElephantSQL - Free option to host PostgresSQL database for the project.
+- Heroku - Host the deployed Moteify app site.
+- LucidChart - Development of the ERD and Flowcharts for the site.
+- Procreate - Emote and asset creation
+- Photoshop - Logo, Wireframing and ReadMe display images.
+- Code Institute CI Python Linter - Python Manual Testing
+- W3 Markup Validation Service - HTML & CSS Validation Testing.
 
-### Technologies Used
 
-### Libraries and Frameworks
+## Libraries and Frameworks
+- Bootstrap v5.3.2
+- Django v 4.2.11
+- Django AllAuth
+- Django Crispy Forms
+- Crispy Bootstrap
+- Django RichTextField
+- Whitenoise
+- Gunicorn
+- Pillow 
 
-### Additional Tools
+## Additional Tools
+- tinypng - image webP-ification
+- Autopep8 - Python Formatter
+- GoogleFonts - Font searching and importing
+- FontAwesome - Favicons
+- ChatGPT - Debugging assistance and documentation research assistance.
+- Imgur - ReadMe Image hosting
 
+----
+## Testing
+
+
+### Extensive Validation and Manual Testing Performed and documented. Documentation can be found here:<br> [Testing Documentation](testing.md)
+
+----
 ### Deployment
 
-### Testing
+Django & Heroku Deployment was set up following the PDF provided by Code Institute below:
+[Deployment Guide](documentation/Deployment.pdf)
 
-#### Extensive Validation and Manual Testing Performed and documented. Documentation can be found here:<br> [Testing Documentation](testing.md)
-
+----
 ### Credits & References 
 
+----
 ### Acknowledgements
 
