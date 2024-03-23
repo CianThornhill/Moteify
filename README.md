@@ -80,7 +80,7 @@ For this project I implemented an Agile Methodology using the MOSCOW prioritizat
 - During the completion of the project, checking my board and breaking down each segment into maneagable tasks allowed me to keep track of what I was working on, and what I could move on to when I was done.
 - Initial planning and management of my Kanban board allowed me to better timekeep and prevent scope creep.
 
-<img src=" https://i.imgur.com/qm7p7XY.png">
+![Moteify Board](https://i.imgur.com/qm7p7XY.png)
 
 - Using Labels, I assigned MOSCOW priortization to each user story, I could then view these within my Project Kanban board at any time and edit them accordingly if required as time and scope became more in question.
 
@@ -121,14 +121,14 @@ Understanding that the main aim for this project was to showcase Django implemen
 
 Through my ideation and user stories development, I had a clear idea of the kinds of pages and features I would need.
 
-<img src="https://i.imgur.com/zGTOM43.jpeg">
+![Wireframes](https://i.imgur.com/zGTOM43.jpeg)
 
 ---
 ### Flow Chart
 
 After creating my site wireframes and deciding on the scope of the project with user stories, I created and revised a site map and flow chart. This flow chart was informed by my wireframes and ideation and was developed and revised in tandem with my ERD during the initial stages of development:
 
-<img src="https://i.imgur.com/RCICSDo.png">
+![Flowchart](https://i.imgur.com/RCICSDo.png)
 
 ---
 ### Entity Relationship Diagram (ERD)
@@ -137,7 +137,7 @@ The ERD displayed below is a revised version of an earlier diagram that was upda
 
 The overall layout and design however was established in the initial version and in combination with the flowchart and wireframes developed proved as invaluable resources to more easily visualize what I wanted to develop.
 
-<img src="https://i.imgur.com/KtKU3wa.png">
+![ERD](https://i.imgur.com/KtKU3wa.png)
 
 ---
 
@@ -207,8 +207,39 @@ I found that I'm happy I did this, as it enabled me to show the use case of the 
 
 ### Site Showcase
 
+![Homepage](https://i.imgur.com/PwlCCaD.png)
+
+![Signin](https://i.imgur.com/vfoBZqw.png)
+
+![Emotes](https://i.imgur.com/o79PweK.png)
+
+![My Favourites and My Emotes](https://i.imgur.com/4yshmHD.png)
+
+![Profile](https://i.imgur.com/HJGHpBj.png)
+
 
 ### Future Implementations
+
+There were several features during the initial ideation of the project that were cut based on scope and timing considerations. A couple others were cut during production due to issues with functionality for features that were lower down on the MOSCOW prioritisation.
+
+#### Cut During Production but Planned for future iterations
+
+- Direct download button which serves image directly to local storage.
+  - I attempted several times to get this working in the project, but issues arose with Cloudinary serving the image directly to the users computer and so the download button was temporarily changed to the option to view the full res image for "save as" functionality.
+  - Additionally, save as png / jpg should be prevented by converting uploaded images to non "image" formats such as webp to prevent ease of download and ensure only registered users are downloading proper image files.
+
+- Profile Pages Viewable by other users.
+  - In future I'd like users to be able to view other user's profiles and see that users bio and uploads from the view. In that way, users can benefit from sharing their porftolio and details if people who find their emotes good wish to comission them etc.
+
+#### Further down the Road
+
+- Paid Download Support
+  - In future, I'd like to enable users to create emote "packs" or place payment restrictions on emote downloads. This would require significant implementation and possibly a redesign of the project but the learnings I've learned here should be applicable.
+
+- Full Email Verification and User password Reset
+  - At the moment, user sign in and login has been purposely kept relatively light due to time constraints and the scope of the project. In future, I'd like to have a more robust user registration that ensures emails are valid and has sufficient password reset functionality that serves reset emails to users.
+
+
 
 ### Device Compatibility / Responsiveness
 
