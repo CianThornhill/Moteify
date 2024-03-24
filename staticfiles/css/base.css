@@ -13,7 +13,7 @@
     --teal_02: #5B8FB9;
     --mint_03: #B6EADA;
     --off-white: #f6f6f6;
-    --white-faded:#d8d8d8;
+    --white-faded: #d8d8d8;
     --white: #fff;
     --black: #000;
     --cardgrey: #212529;
@@ -35,12 +35,18 @@ body {
     background-color: var(--background_light);
 }
 
-h1, h2, h3, h4, h5, h6, .footer_h {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.footer_h {
     font-family: var(--title-font);
     color: var(--white);
 }
 
-h1{
+h1 {
     font-size: 3rem;
 }
 
@@ -57,31 +63,34 @@ main {
     border-bottom: 2px solid var(--off-white);
     font-weight: 500;
 }
+
 .underline {
     text-decoration: underline;
 }
+
 /* --- HEADER --- */
 .nav-container {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    width:100%;
+    width: 100%;
 }
 
 .navbar {
     background-color: var(--background);
     box-shadow: var(--small-box-shadow);
     display: flex;
-    font-size:1.75rem;
+    font-size: 1.75rem;
     padding: 1rem;
 }
 
 .nav-reg {
     justify-content: flex-end;
-} 
+}
 
 a.navbar-brand {
     margin-right: 1rem;
 }
+
 .navbar-nav .nav-item {
     border-right: 1px solid var(--off-white);
     padding-left: 0.5rem;
@@ -110,7 +119,7 @@ a.nav-link {
 
 .search-btn:hover {
     color: var(--mint_03);
-    background-color: transparent; 
+    background-color: transparent;
     border-color: var(--mint_03);
 }
 
@@ -129,6 +138,7 @@ a.nav-link {
 .form-text {
     color: var(--white-faded);
 }
+
 /* --- Home --- */
 
 .h-container {
@@ -142,7 +152,7 @@ a.nav-link {
     display: flex;
     position: relative;
     overflow: hidden;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     background: var(--cardgrey);
     transition: all 0.6s ease;
 }
@@ -152,11 +162,11 @@ a.nav-link {
     max-height: 100%;
     max-width: 100%;
     opacity: 0.7;
-    transition: opacity 0.4s ease; 
+    transition: opacity 0.4s ease;
 }
 
 .h-row:hover .h-img {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .h-image-container {
@@ -171,13 +181,13 @@ a.nav-link {
 }
 
 .h-text-section {
-    display:flex;
+    display: flex;
     align-items: center;
     padding: 2rem;
 }
 
 .h-text {
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -190,18 +200,19 @@ a.nav-link {
 }
 
 @media (max-width: 860px) {
-    .h-text{
-        font-size:small;
+    .h-text {
+        font-size: small;
     }
 }
+
 /* --- PROFILE --- */
 .profile-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px; 
-    margin: 2rem 0.5rem; 
-    overflow:auto;
+    max-width: 1200px;
+    margin: 2rem 0.5rem;
+    overflow: auto;
 }
 
 .profile-bio {
@@ -214,14 +225,14 @@ a.nav-link {
 
 }
 
-.profile-bio h2{
+.profile-bio h2 {
     text-align: center;
 
 }
 
-.profile-info{
+.profile-info {
     border: 3px solid var(--background);
-    width:100%;
+    width: 100%;
     border-radius: 0 0 5px 5px;
     background: var(--cardgrey);
 }
@@ -230,7 +241,7 @@ a.nav-link {
     background-color: var(--background);
     border-radius: 5px 5px 0 0;
     margin-top: 10px;
-    width:100%;
+    width: 100%;
 }
 
 .profile-username h2 {
@@ -240,20 +251,22 @@ a.nav-link {
 .profile_pic_container {
     background-color: var(--background);
     border-radius: 50%;
-   
+
 }
+
 .profile_pic_container img {
     width: 100%;
     height: auto;
 }
+
 .round-image {
     border-radius: 50%;
     border: 3px solid black;
 
 }
 
-.profile-edit-container{
-    text-align:center;
+.profile-edit-container {
+    text-align: center;
     margin-top: 25px;
     border-radius: 5px;
     border: 3px solid black;
@@ -261,28 +274,30 @@ a.nav-link {
 
 }
 
-.profile-buttons{
-    display:flex;
+.profile-buttons {
+    display: flex;
     flex-direction: row;
 }
+
 .profile-buttons a {
     margin: 1rem;
 }
+
 /* --- EMOTES LIST --- */
 
 .card {
-    margin-top:1rem;
+    margin-top: 1rem;
     color: var(--off-white);
 }
 
-.card-title{
+.card-title {
     text-align: center;
     font-weight: 800;
 
 }
 
-.card-text{
-    font-weight:200;
+.card-text {
+    font-weight: 200;
     text-align: center;
     border: solid 1px var(--white-faded);
 }
@@ -292,7 +307,7 @@ a.nav-link {
     color: var(--off-white)
 }
 
-.emotes_category{
+.emotes_category {
     border: solid 1px white;
 }
 
@@ -311,8 +326,8 @@ a.nav-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px; 
-    margin: 1rem auto; 
+    max-width: 1200px;
+    margin: 1rem auto;
 }
 
 .emotes-container {
@@ -329,9 +344,10 @@ a.nav-link {
     height: auto;
 }
 
-.save_emote{
-    text-align:center;
+.save_emote {
+    text-align: center;
 }
+
 /* --- EMOTE Detail --- */
 .emote-img {
     display: flex;
@@ -346,24 +362,25 @@ a.nav-link {
     max-width: 512px;
 }
 
-.emote-details{
-    width:100%;
+.emote-details {
+    width: 100%;
 }
 
-.btn-fave{
+.btn-fave {
     font-size: 2rem;
 
 }
 
-.btn-fave-on{
-    color:red;
+.btn-fave-on {
+    color: red;
 
 }
 
-.btn-fave-off{
+.btn-fave-off {
     color: var(--white-faded);
-    
+
 }
+
 /*--- Pagination ---*/
 
 .pagination {
@@ -394,21 +411,29 @@ a.nav-link {
     font-size: 16px;
 }
 
+@media (max-width: 545px) {
+    .pagination a {
+        font-size: 18px;
+        padding: 5px 5px;
+        margin: 0 5px;
+    }
+}
+
 /*--- Favourites List ---*/
 
 .favourites-title {
-    width:100%;
+    width: 100%;
     background-color: var(--background);
-    text-align:center;
-    margin-top:25px;
+    text-align: center;
+    margin-top: 25px;
     border-radius: 5px;
 }
 
 /* --- Footer --- */
 footer {
     background-color: var(--background);
-    margin-top:auto;
-    
+    margin-top: auto;
+
 }
 
 .social-icon {
@@ -416,8 +441,8 @@ footer {
     font-size: 2rem;
     margin: 0 1rem;
     transition: color 0.3s ease;
-    
-} 
+
+}
 
 .socials a {
     text-decoration: none;
@@ -425,19 +450,21 @@ footer {
 
 .social-icon:hover {
     color: var(--mint_03);
-    
+
 }
+
 /* --- Messages --- */
-.messages-container{
-    width:100%;
-    color:var(--mint_03);
+.messages-container {
+    width: 100%;
+    color: var(--mint_03);
     background-color: var(--background);
     border: 1px solid var(--off-white);
     text-align: center;
 }
+
 .messages-container ul {
     list-style-type: none;
-  }
+}
 
 /* --- Categories --- */
 .happy {
@@ -519,4 +546,5 @@ footer {
     color: #808080;
     border: 1px solid #808080;
 }
+
 /* ------------------ */

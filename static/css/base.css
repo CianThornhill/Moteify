@@ -411,6 +411,14 @@ a.nav-link {
     font-size: 16px;
 }
 
+@media (max-width: 545px) {
+    .pagination a {
+        font-size: 18px;
+        padding: 5px 5px;
+        margin: 0 5px;
+    }
+}
+
 /*--- Favourites List ---*/
 
 .favourites-title {
