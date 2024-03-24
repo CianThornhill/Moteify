@@ -230,6 +230,11 @@ There were several features during the initial ideation of the project that were
 - Profile Pages Viewable by other users.
   - In future I'd like users to be able to view other user's profiles and see that users bio and uploads from the view. In that way, users can benefit from sharing their porftolio and details if people who find their emotes good wish to comission them etc.
 
+- Filter by User and Profile Page changes (emotes gallery, edit profile behind button / modal)
+  - In the current iteration of the project, the Profile page serves as a simple CRUD functionality proof of concept. But in future I'd like to develop it further into a fully functioning aspect of the project
+  - Users will be able to click "creators" of emotes and visit their profile page. The Profile page will display the users display name rather than their security name, and will contain a gallery of their emotes.
+  - Users will be able to search for emotes based on User as well as category.
+
 ### Further down the Road
 
 - Paid Download Support
@@ -321,6 +326,7 @@ Django & Heroku Deployment was set up following the PDF provided by Code Institu
 ### Credits & References 
 - [Django Official Documenation](https://www.djangoproject.com)
 - [Bootstrap Official Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Cloudinary Documentation](https://cloudinary.com/documentation)
 - Code Institute - Code institutes Bootcamp Course Learning Platform content was referenced often during the project.
 - [Daisy McGirr's Django Recipe App tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy) - Highly referenced resource in the development of the structure of this project.
 - [Amylour's Free Fido Project](https://github.com/amylour/FreeFido_v2) - Amy linked this project to us as an example as a former student of Code institute. I used it for ReadMe Structure reference and to get ideas for how django apps similar to my own had been implemented.
