@@ -239,9 +239,31 @@ There were several features during the initial ideation of the project that were
   - At the moment, user sign in and login has been purposely kept relatively light due to time constraints and the scope of the project. In future, I'd like to have a more robust user registration that ensures emails are valid and has sufficient password reset functionality that serves reset emails to users.
 
 
-## Device Compatibility / Responsiveness
+## Compatibility / Accessibility 
+
+### Device Compatibility & Responsiveness
+
+As shown in the site showcase and Project introduction image, Moteify has been fully responsively tested to ensure that nothing breaks based on screen sizes down to 320px in width which is widely accepted as the key mobile display width range to aim for. full responsivity with. 
+
+Throughout the sites development, changes were made to ensure that all device widths were compatible, although Bootstrap does a great job of assistance with this as a framework. 
+
+Manual fixes however were made throughout the process with an extensive css file.
+
+- I ensured all elements were viewable and did not break or overflow from large resolutions down to 320px.
+- I ensured pagination options were made bigger and more easily clickable on Mobile devices.
+- I ensured that small "Sign in" links were replaced with more easily clickable buttons.
+- I ensured a responsive navbar was implemented and that all dropdowns functioned.
+- I ensured that elements scaled responsively while retaining readability.
+
+![Compatibility Display](https://i.imgur.com/ajc6wRL.png)
+
+### Accessibility
+
+I also ensured that elements on the page were labelled with aria labels appropriately to ensure the site functioned in collaboration with screen readers. Additionally, I ensured that buttons were clearly visible, and that messages informed users of actions taken.
 
 ## Bug Documentation
+
+### Bug Documentation can be found here : [Bug Documentation](bugs.md)
 
 ## Technologies Used
 - HTML
@@ -287,7 +309,7 @@ There were several features during the initial ideation of the project that were
 ## Testing
 
 
-### Extensive Validation and Manual Testing Performed and documented. Documentation can be found here:<br> [Testing Documentation](testing.md)
+### Extensive Validation and Manual Testing Performed and documented.<br> Test Documentation can be found here: [Testing Documentation](testing.md)
 
 ----
 ### Deployment
@@ -297,7 +319,22 @@ Django & Heroku Deployment was set up following the PDF provided by Code Institu
 
 ----
 ### Credits & References 
+- [Django Official Documenation](https://www.djangoproject.com)
+- [Bootstrap Official Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- Code Institute - Code institutes Bootcamp Course Learning Platform content was referenced often during the project.
+- [Daisy McGirr's Django Recipe App tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy) - Highly referenced resource in the development of the structure of this project.
+- [Amylour's Free Fido Project](https://github.com/amylour/FreeFido_v2) - Amy linked this project to us as an example as a former student of Code institute. I used it for ReadMe Structure reference and to get ideas for how django apps similar to my own had been implemented.
+- [Very Academy's Simple Blog app](https://www.youtube.com/watch?v=AF4ji8bb1M8&t=2s) - A great simple introductory lesson in Django which was a great reference.
+
 
 ----
 ### Acknowledgements
+- Many thanks to **my colleagues** on the **TIAS Bootcamp 2023 - 2024** course. I've learned so much through our collaboration during Hackathon's and during meetings where we discussed bugs and difficulties we were experiencing. <br>
+I feel as though our class was very supportive, always propping eachother up and looking out for one another and that community has really helped me get to where I am today and to get this project to the state that its in.
+
+- Thank you to our facilitator **David Calikes**, who's unwavering support and transparency throughout this course was nothing short of wonderful. He has left an impression on me and I'm sure all of us on the course.
+
+- Thank you to **Code Institute**, for providing me with an opportunity to reskill and enter the world of software development by collaborating with TIAS. Before starting this course, I was at a difficult point in my life, and I'm now looking forward to a future where I can reasonably begin to seek employment in an engaging and interesting industry.
+
+- Thank you to **my partner and family** also who continued to support me through days where I was stuck in my room without seeing sunlight for these last 2 weeks of the course!
 
