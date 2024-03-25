@@ -332,7 +332,7 @@ Django & Heroku Deployment was set up following the PDF provided by Code Institu
 - [Amylour's Free Fido Project](https://github.com/amylour/FreeFido_v2) - Amy linked this project to us as an example as a former student of Code institute. I used it for ReadMe Structure reference and to get ideas for how django apps similar to my own had been implemented.
 - [Very Academy's Simple Blog app](https://www.youtube.com/watch?v=AF4ji8bb1M8&t=2s) - A great simple introductory lesson in Django which was a great reference.
 - [Very Academy Favourites Features](https://www.youtube.com/watch?v=H4QPHLmsZMU) - I built a lot of my understanding on how to get favourites implemented with this tutorial.
-- [ChatGPT](https://chat.openai.com) - Used for troubleshooting error messages, bugfixing and breaking down difficult concepts into easier to understand information.
+- [ChatGPT](https://chat.openai.com) - Used for troubleshooting error messages, debugging & bugfixing, and breaking down difficult concepts into easier to understand information.
 
 
 ----
